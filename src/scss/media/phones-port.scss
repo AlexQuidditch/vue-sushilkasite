@@ -1,0 +1,127 @@
+@import '../partials/_variables';
+@import '../partials/_layout';
+@import '../partials/_mixins';
+
+@include MQ(Pp) {
+    .cart {
+        top: 0;
+        left: 0;
+        width: 100%;
+
+        &.is-filled {
+            transform: translateY(calc(-100% + 60px));
+        }
+
+        &.is-opened {
+            transform: translateY(-50%)
+        }
+    }
+
+    .modal {
+        width: 100%;
+
+        &__header-title {
+            text-align: left;
+            padding-left: 2vw;
+        }
+    }
+
+    .header {
+        &__title {
+            font-size: 1.5rem
+        }
+        &__subtitle {
+            font-size: 1.5rem
+        }
+    }
+
+    .sidebar {
+        z-index: 100;
+        top: auto;
+        bottom: 5vh;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .information__additional {
+        text-align: center;
+    }
+
+    .information-list {
+        $icon-size: 125px;
+
+        &__card {
+            width: 90%;
+        }
+
+        &__icon {
+            width: $icon-size;
+            height: $icon-size;
+            margin: 10px;
+        }
+
+        &__svg {
+            .information-list__card:hover & {
+                animation: none;
+            }
+        }
+    }
+
+    .product {
+        width: 100%;
+
+        &__order {
+            width: 100%;
+        }
+    }
+
+    .footer .container_flex-row {
+        margin-bottom: 5rem;
+    }
+
+    .social {
+        flex: 1 1 100%;
+        flex-flow: column wrap;
+
+        &__text {
+            display: block;
+            text-align: center;
+            font-size: 1.5rem;
+            line-height: 3rem;
+        }
+
+        &__list {
+            width: 100%;
+        }
+
+        &__item {
+            display: block;
+        }
+
+        &__link {
+            display: block;
+        }
+    }
+
+    .feedback {
+        flex: 1 1 100%;
+        padding: 1.5rem 0;
+
+        &__button {
+            width: 100%;
+            font-size: 1.3rem;
+        }
+    }
+
+    .requisites {
+        &__column {
+            flex: 1 1 100%;
+            margin-bottom: 1rem;
+        }
+    }
+};

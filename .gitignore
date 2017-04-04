@@ -1,0 +1,5 @@
+*.log
+npm-debug.log*
+build
+node_modules
+src/data.js

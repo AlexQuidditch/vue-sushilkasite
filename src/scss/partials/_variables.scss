@@ -1,0 +1,57 @@
+// fonts
+$main-font: 'Playfair Display', serif;
+$second-font: 'Philosopher', sans-serif;
+
+// colors
+$main-elm: #fff;
+$second-elm: #934444;
+$slider-elms: mix(#ecf0f1, $second-elm, 25%);
+$body-bckgrnd: black;
+
+$main-text: #4e6361; // main text
+$link: #6cac70; // anchor tags
+$vk: #2980b9;
+
+//Blue
+$river-blue: #3498db;
+
+//Green
+$emerald: #2ecc71;
+
+//Dark
+$asphalt: #34495e;
+
+//Gray
+$concrete: #95a5a6;
+
+//White
+$cloud: #ecf0f1;
+
+//Red
+$alizarin: #e74c3c;
+
+//Yellow
+$sun: #f1c40f;
+$orange: #f39c12;
+
+$ripple-opacity: 0.4;
+
+// z-index
+$secondary-nav: 10;
+$content-zindex: 20;
+$header-zindex: 30;
+$overlay-zindex: 40;
+$cart-zindex: 50;
+$modal-zindex: 60;
+
+$material: cubic-bezier(.6,-0.04,.34,1);
+
+$color-1: lighten(#3E2723, 7%); // green dark
+$color-2: darken(#3E2723, 5%); // green darker
+$color-3: #E0E0E0;
+$color-4: #fcb052; // Texas Rose
+$color-5: #f06a59; // Burnt Sienna
+$color-6: #ffffff; // White
+$red: #d76666; // error messages
+$blacked: black;
+$grayed: #424242;
