@@ -1,10 +1,9 @@
 <template lang="html">
 	<div id="wrapper" class="wrapper">
 		<cart :added="added" @clearCart = "clearCart()" ></cart>
-		<main id="main" class="main">
-			<catalogue @addToCart="pushToCart($event)"></catalogue>
-		</main>
-		<modal class = "is-opened"></modal>
+		<catalogue @addToCart="pushToCart($event)"></catalogue>
+		<s-footer></s-footer>
+		<modal></modal>
 	</div>
 </template>
 
@@ -13,13 +12,15 @@
 import Modal from '@/components/form'
 import Cart from '@/components/cart';
 import Catalogue from '@/components/catalogue';
+import sFooter from '@/components/footer';
 
 export default {
 	name: 'app',
 	components: {
 		Cart,
 		Catalogue,
-		Modal
+		Modal,
+		sFooter
 	},
 	data() {
 		return {
