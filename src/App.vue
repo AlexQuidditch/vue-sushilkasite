@@ -1,9 +1,21 @@
 <template lang="html">
 	<div id="wrapper" class="wrapper">
-		<cart :added="added" @clearCart = "clearCart()" ></cart>
-		<catalogue @addToCart="pushToCart($event)"></catalogue>
+		<cart
+			:added="added"
+			@clearCart = "clearCart()"
+			@modalOpen = "modalOpen()"
+		></cart>
+		<s-menu></s-menu>
+		<s-header></s-header>
+		<catalogue
+			@addToCart="pushToCart($event)"
+		></catalogue>
 		<s-footer></s-footer>
-		<modal></modal>
+		<modal
+			:class = " { 'is-opened' : modalState } "
+			@clearCart = "clearCart()"
+			@modalClose = "modalClose()"
+		></modal>
 	</div>
 </template>
 
@@ -12,7 +24,11 @@
 import Modal from '@/components/form'
 import Cart from '@/components/cart';
 import Catalogue from '@/components/catalogue';
+import sHeader from '@/components/header';
 import sFooter from '@/components/footer';
+import sMenu from '@/components/menu';
+
+import ScrollPolyfill from 'smoothscroll-polyfill';
 
 export default {
 	name: 'app',
@@ -20,11 +36,14 @@ export default {
 		Cart,
 		Catalogue,
 		Modal,
-		sFooter
+		sHeader,
+		sFooter,
+		sMenu
 	},
 	data() {
 		return {
-			added: []
+			added: [],
+			modalState: false
 		}
 	},
 	methods: {
@@ -46,12 +65,19 @@ export default {
 		},
 		clearCart() {
 			this.added = []
+		},
+		modalOpen() {
+			this.modalState = true
+		},
+		modalClose() {
+			this.modalState = false
 		}
 	},
 	mounted() {
 		Waves.init();
 		Waves.attach('[ripple-dark]', ['waves-dark']);
 		Waves.attach('[ripple-light]', ['waves-light']);
+		ScrollPolyfill.polyfill();
 	}
 }
 </script>
@@ -104,18 +130,4 @@ svg:not(:root) {
     overflow: visible;
 }
 
-.fade-enter-active,
-.fade-leave-active {
-    transition: opacity 0.1s;
-}
-
-.fade-enter,
-.fade-leave-to {
-    opacity: 0;
-}
 </style>
-
-<style src = "./scss/media/phones-port.scss" lang="scss"></style>
-<style src = "./scss/media/phones-land.scss" lang="scss"></style>
-<style src = "./scss/media/tablets-port.scss" lang="scss"></style>
-<style src = "./scss/media/tablets-land.scss" lang="scss"></style>

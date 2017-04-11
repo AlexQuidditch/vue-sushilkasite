@@ -2,7 +2,7 @@
 
 	<div id="cart"
 		class="cart"
-		:class="{ 'is-filled': CartState.isFilled, 'is-opened' : CartState.isOpened }">
+		:class="{ 'is-opened' : CartState.isOpened }">
 
         <div class="cart__header">
             <h4 class="cart__header-title">Корзина</h4>
@@ -29,24 +29,22 @@
 			</div>
 
 			<ul class = "cart-list">
-				<li is="cart-Item"
-					v-for = "(cartItem, index) in added" :key = "cartItem.key"
+				<cart-Item v-for = "( cartItem , index ) in added" :key = "cartItem.key"
 					:id = "cartItem.id"
 					:name = "cartItem.name"
 					:price = "cartItem.price"
 					:quantity = "cartItem.quantity"
-					:surname = "cartItem.surname"
-					:summ = "cartItem.summ"
-					@remove = "added.splice(index, 1)"
+					@remove = "added.splice(index, 1), remove()"
 					@incriment = "cartItem.quantity += 1"
 					@decriment = "decriment(cartItem)"
 					@summUp = "summUp($event)"
 					>
-				</li>
+				</cart-item>
 			</ul>
 
             <div class="cart__order">
                 <button
+					@click = "$emit('modalOpen')"
 					class="cart__order-button"
 					ripple-light
 					>
@@ -57,22 +55,28 @@
 
         <div class="cart__footer">
 
-			<span class="cart__price">{{ quantities }} товаров на сумму {{ animatedSumms }} р.</span>
+			<transition name = "fade" mode = "out-in" >
+				<span v-if = "CartState.isFilled" key = "filled" class="cart__price">{{ quantities }} товаров на сумму {{ animatedSumms }} р.</span>
+				<span v-else key = "empty" class="cart__price">Корзина пуста.</span>
+			</transition>
 
-            <span class="cart__open">
-				<button
-					@click = "CartState.isOpened = true"
-					class= "cart__open-button"
-					:class = "{ 'is-opened' : CartState.isOpened }"
-					type="button"
-					name="button"
-					:title = "titles.openTitle"
-					>
-						<i class="cart__open-icon fa fa-check"
-							:class = "{ 'is-opened' : CartState.isOpened }"
-							aria-hidden="true"></i>
+			<span class="cart__open">
+				<transition name = "fade" mode = "out-in" >
+					<button
+						v-show = "CartState.isFilled"
+						@click = "CartState.isOpened = true"
+						:class = "{ 'is-opened' : CartState.isOpened, 'is-filled': !CartState.isFilled }"
+						:title = "titles.openTitle"
+						class= "cart__open-button"
+						type="button"
+						name="button"
+						>
+							<i class="cart__open-icon fa fa-check"
+								:class = "{ 'is-opened' : CartState.isOpened }"
+								aria-hidden="true"></i>
 					</button>
-            </span>
+				</transition>
+			</span>
 
             <span class="cart__clear">
 				<button
@@ -103,7 +107,7 @@ import cartItem from './templates/cartItem';
 
 export default {
 	name: "cart",
-	props: ['added'],
+	props: [ 'added' ],
 	components: {
 		cartItem
 	},
@@ -126,20 +130,10 @@ export default {
 	watch: {
 		added() {
 			let $data = this;
-			const summs = [];
-			const quantities = [];
-			for (let item of $data.added) {
-				summs.push(item.quantity * item.price)
-				quantities.push(item.quantity)
-			};
-			$data.suumms = summs.reduce((sum, n) => (sum += n), 0)
-			$data.quantities = quantities.reduce((sum, n) => (sum += n), 0)
-			if (this.quantities > 0) {
-				$data.CartState.isFilled = true
-			} else {
+			if ( $data.added.length == 0 ) {
 				$data.CartState.isFilled = false;
 				$data.CartState.isOpened = false
-			};
+			}
 		},
 		summUpper() {
 			let $data = this;
@@ -153,9 +147,6 @@ export default {
 			$data.quantities = quantities.reduce((sum, n) => (sum += n), 0)
 			if (this.quantities > 0) {
 				$data.CartState.isFilled = true
-			} else {
-				$data.CartState.isFilled = false
-				$data.CartState.isOpened = false
 			}
 		},
 		suumms(newValue, oldValue) {
@@ -185,7 +176,7 @@ export default {
 	},
 	methods: {
 		decriment(item) {
-			if (item.quantity >= 2) {
+			if (item.quantity > 1) {
 				item.quantity -= 1
 			};
 		},
@@ -194,14 +185,26 @@ export default {
 		},
 		clearCart() {
 			this.$emit('clearCart')
-			this.CartState.isFilled = 0
-			this.CartState.isOpened = 0
+		},
+		remove() {
+			let $data = this;
+			const summs = [];
+			const quantities = [];
+			for (let item of $data.added) {
+				summs.push(item.quantity * item.price)
+				quantities.push(item.quantity)
+			};
+			$data.suumms = summs.reduce((sum, n) => (sum += n), 0)
+			$data.quantities = quantities.reduce((sum, n) => (sum += n), 0)
 		}
 	}
 }
+
 </script>
 
-<style lang="scss">@import '../scss/partials/_layout';
+<style lang="scss">
+
+@import '../scss/partials/_layout';
 @import '../scss/partials/_mixins';
 @import '../scss/partials/_variables';
 
@@ -214,15 +217,29 @@ $iconSize: 1.25rem;
     position: fixed 0 auto auto 50%;
     width: $cartHeight * 8;
     background-color: $main-elm;
-    transform: translate(-50%, -100%);
-    transition: 0.6s ease-in-out;
-    &.is-filled {
-        transform: translate(-50%, calc(-100% + 60px));
-        @include MDShadow-3;
+	transform: translate(-50%, calc(-100% + 60px));
+	@include MDShadow-3;
+	will-change: top, transform;
+    transition:
+		top 0.6s ease-in-out,
+		transform 0.6s ease-in-out;
+	@include MQ(Pp) {
+		width: 100%;
     }
+	@include MQ(Pl) {
+		width: 100%;
+	}
     &.is-opened {
-        top: 30%;
-        transform: translate(-50%, -30%);
+    	top: 30%;
+        transform: translate( -50% , -30% );
+		@include MQ(Pp) {
+			top: 50%;
+            transform: translate( -50% , -50% )
+    	}
+		@include MQ(Pl) {
+			top: 50%;
+            transform: translate( -50% , -50% )
+		}
     }
     &__header {
         width: 100%;
@@ -236,15 +253,12 @@ $iconSize: 1.25rem;
     &__body {
         display: flex;
         flex-flow: column wrap;
-        justify-content: center;
         width: 100%;
     }
     &__footer {
         display: flex;
         flex-flow: row wrap;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
+        justify-content: flex-end;
     }
     &__price {
         overflow: hidden;
@@ -254,6 +268,9 @@ $iconSize: 1.25rem;
         align-items: center;
         size: 60% $cartHeight;
         padding: 0 35px;
+		@include MQ(Pp) {
+			padding: 0 15px;
+		}
     }
     &__order {
         height: $cartHeight;
@@ -296,7 +313,7 @@ $iconSize: 1.25rem;
         font-size: 2rem;
 		border: none;
 		cursor: pointer;
-        transition: 0.3s ease-in-out;
+        transition: background-color 0.3s ease-in-out;
         &:hover {
             background-color: rgba($second-elm, .1);
         }
@@ -316,4 +333,45 @@ $iconSize: 1.25rem;
         }
     }
 }
+
+.cart-columns {
+	padding: 0 10px;
+	text-align: left;
+	font-size: 0;
+	@include MQ(Pp) {
+		display: none;
+	}
+	&__name,
+	&__quantity,
+	&__price,
+	&__summ {
+		display: inline-block;
+		text-align: center;
+		font-size: 1rem;
+		line-height: 2rem;
+		padding: 0;
+	}
+	&__name {
+		width: 39%;
+	}
+	&__price {
+		width: 15%;
+	}
+	&__quantity {
+		width: 24%;
+	}
+	&__summ {
+		width: 15%;
+	}
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.3s
+}
+.fade-enter,
+.fade-leave-to {
+    opacity: 0
+}
+
 </style>

@@ -9,11 +9,13 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "smoothscroll-polyfill": "^0.3.4",
     "tween.js": "^16.6.0",
+    "velocity-animate": "^1.5.0",
     "vue": "^2.2.6",
+    "vue-flickity": "^1.0.7",
     "vue-masked-input": "^0.4.1",
     "vue-resource": "^1.2.1",
-    "vue-scroll": "^2.0.2",
     "vue-sweetalert": "^0.1.17"
   },
   "devDependencies": {

@@ -3,7 +3,7 @@
 		<h6 class="product__name">{{ name }}</h6>
         <img
             class="product__image"
-            :src=" './assets/img/ ' + picture "
+            :src=" '../../static/assets/img' + picture "
             :alt=" type + ' ' + name ">
         <span class="product__description">{{ description }}</span>
         <span class="product__weight">{{ weight }} г.</span>
@@ -13,7 +13,6 @@
         	    data-focus="Добавлено!">{{ price }} р.</span>
 	    </button>
 	</li>
-
 </template>
 
 <script>
@@ -55,6 +54,12 @@
 	cursor: default;
 	transition: 0.3s ease-in;
 	@include MDShadow-1;
+	@include MQ(Pp) {
+		width: 100%;
+	}
+	@include MQ(Pl) {
+		flex-basis: 45%;
+	}
 	&__name {
 		flex: 1 1 auto;
 		margin: 0 auto 1rem auto;
@@ -89,6 +94,12 @@
 		}
 		.csstransforms3d &:focus .product__order-price::before {
 			background: darken($second-elm, 10%);
+		}
+		@include MQ(Pp) {
+			width: 100%;
+		}
+		@include MQ(Pl) {
+			width: 100%;
 		}
 	}
 	&__order-price {

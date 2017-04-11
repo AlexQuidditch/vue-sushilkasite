@@ -143,6 +143,9 @@
 		padding: 30px;
 		background-color: $main-elm;
 		@include MDShadow-1;
+		@include MQ(Pp) {
+    	    margin-bottom: 5rem;
+		}
 	}
 
 	.social {
@@ -150,18 +153,50 @@
 		justify-content: center;
 		align-items: center;
 		flex: 1 1 49%;
+		@include MQ(Pp) {
+	        flex: 1 1 100%;
+    	    flex-flow: column wrap;
+		}
+		@include MQ(Pl) {
+	        flex: 1 1 100%;
+    	    flex-flow: column wrap;
+		}
 		&__text {
 			display: inline-block;
 			vertical-align: middle;
+			@include MQ(Pp) {
+	            display: block;
+	            text-align: center;
+	            font-size: 1.5rem;
+	            line-height: 3rem;
+			}
+			@include MQ(Pl) {
+	            display: block;
+	            text-align: center;
+	            font-size: 1.5rem;
+	            line-height: 3rem;
+			}
 		}
 		&__list {
 			display: inline-block;
 			width: 50%;
 			text-align: center;
 			vertical-align: middle;
+			@include MQ(Pp) {
+            	width: 100%;
+			}
+			@include MQ(Pl) {
+            	width: 100%;
+			}
 		}
 		&__item {
 			display: inline-block;
+			@include MQ(Pp) {
+				display: block;
+			}
+			@include MQ(Pl) {
+				display: block;
+			}
 		}
 		&__link {
 			padding: 8px 8px 10px;
@@ -175,6 +210,12 @@
 			&:visited {
 				color: $main-elm;
 			}
+			@include MQ(Pp) {
+				display: block;
+			}
+			@include MQ(Pl) {
+				display: block;
+			}
 		}
 	}
 
@@ -182,6 +223,14 @@
 		flex: 1 1 49%;
 		text-align: center;
 		padding: 10px;
+		@include MQ(Pp) {
+			flex: 1 1 100%;
+	        padding: 1.5rem 0;
+		}
+		@include MQ(Pl) {
+			flex: 1 1 100%;
+	        padding: 1.5rem 0;
+		}
 		&__button {
 			display: inline-block;
 			width: 50%;
@@ -193,6 +242,14 @@
 			@include MDShadow-1;
 			&:hover {
 				@include MDShadow-2;
+			}
+			@include MQ(Pp) {
+				width: 100%;
+	            font-size: 1.3rem;
+			}
+			@include MQ(Pl) {
+				width: 100%;
+	            font-size: 1.3rem;
 			}
 		}
 	}
@@ -207,6 +264,14 @@
 		&__column {
 			flex: 1 1 25%;
 			text-align: center;
+			@include MQ(Pp) {
+				flex: 1 1 100%;
+	            margin-bottom: 1rem;
+			}
+			@include MQ(Pl) {
+				flex: 1 1 100%;
+	            margin-bottom: 1rem;
+			}
 		}
 		&__name {
 			font-size: 1.2rem;

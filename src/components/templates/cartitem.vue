@@ -23,7 +23,7 @@
 				<i class="cart-item__icon fa fa-plus" aria-hidden="true"></i>
 			</button>
 		</span>
-		<span class = "cart-item__summ">{{ summ }} </span>
+		<span class = "cart-item__summ">{{ summ = quantity * price }}</span>
 		<button
 			@click="$emit('remove')"
 			class = "cart-item__remove"
@@ -48,17 +48,14 @@ export default {
 	},
 	created() {
 		this.quantity = 1;
-		this.summ = this.price * this.quantity;
 	},
 	mounted() {
+		this.$emit('summUp', this.summ );
 		Waves.init();
 		Waves.attach('[ripple-dark]', ['waves-dark']);
 		Waves.attach('[ripple-light]', ['waves-light']);
 	},
 	watch: {
-		quantity() {
-			this.summ = this.price * this.quantity;
-		},
 		summ() {
 			this.$emit('summUp', this.summ );
 		}
@@ -75,22 +72,25 @@ export default {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	height: 2rem;
+	height: 2.5rem;
+	max-height: 3rem;
 	margin: 10px;
 	&__name,
 	&__quantity,
 	&__price,
 	&__summ {
-		height: 100%;
-		line-height: 2rem;
+		height: 2.5rem;
+		line-height: 2.5rem;
 		padding: 0;
 	}
 	&__icon {
 		font-size: 1.5rem;
-		line-height: 2rem;
+		line-height: 2.5rem;
 	}
 	&__name {
-		width: 40%;
+		size: 40% auto;
+		margin: auto;
+		line-height: 1.5rem;
 	}
 	&__price {
 		width: 15%;

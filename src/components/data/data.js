@@ -4,7 +4,7 @@ const store = {
 		name: "Вега",
 		type: "ролл",
 		picture: "/rolls/vega.jpg",
-		decription: "Рис, огурец, авокадо, хияше вакаме, кунжут, нори",
+		description: "Рис, огурец, авокадо, хияше вакаме, кунжут, нори",
 		weight: "210",
 		price: "199",
 		quantity: "1",
@@ -14,27 +14,25 @@ const store = {
 		name: "Гари",
 		type: "ролл",
 		picture: "/rolls/gari.jpg",
-		decription: "Рис, крабовые палочки, лосось, авокадо, тобико, нори",
+		description: "Рис, крабовые палочки, лосось, авокадо, тобико, нори",
 		weight: "200",
 		price: "199",
-		quantity: "1",
-		summ: ""
+		quantity: "1"
 	}, {
 		id: "003",
 		name: "Бука",
 		type: "ролл",
 		picture: "/rolls/buka.jpg",
-		decription: "Рис, мидии, болгарский перец, чесночный соус, кунжут, нори",
+		description: "Рис, мидии, болгарский перец, чесночный соус, кунжут, нори",
 		weight: "200",
 		price: "129",
-		quantity: "1",
-		summ: ""
+		quantity: "1"
 	}, {
 		id: "004",
 		name: "Капа хосомаки",
 		type: "ролл",
 		picture: "/rolls/kapa-hosomaki.jpg",
-		decription: "Рис, огурец, кунжут, нори",
+		description: "Рис, огурец, кунжут, нори",
 		weight: "150",
 		price: "99",
 		quantity: "1"
@@ -43,7 +41,7 @@ const store = {
 		name: "Лава",
 		type: "ролл",
 		picture: "/rolls/lava.jpg",
-		decription: "Рис, сливочный сыр, лосось жареный, соус Лава, нори",
+		description: "Рис, сливочный сыр, лосось жареный, соус Лава, нори",
 		weight: "250",
 		price: "279",
 		quantity: "1"
@@ -52,7 +50,7 @@ const store = {
 		name: "Нью-Йорк маки",
 		type: "ролл",
 		picture: "/rolls/new-york-maki.jpg",
-		decription: "Рис, сливочный сыр, лосось холодного копчения, тобико, кунжут, нори",
+		description: "Рис, сливочный сыр, лосось холодного копчения, тобико, кунжут, нори",
 		weight: "250",
 		price: "219",
 		quantity: "1"
@@ -61,7 +59,7 @@ const store = {
 		name: "Грин ролл",
 		type: "ролл",
 		picture: "/rolls/green-roll.jpg",
-		decription: "Рис, сливочный сыр, курица, помидор, салат, соус Цезарь, нори",
+		description: "Рис, сливочный сыр, курица, помидор, салат, соус Цезарь, нори",
 		weight: "230",
 		price: "189",
 		quantity: "1"
@@ -70,7 +68,7 @@ const store = {
 		name: "Сырный ролл",
 		type: "ролл",
 		picture: "/rolls/cheese-roll.jpg",
-		decription: "Рис, сливочный сыр, сыр Чедар, нори",
+		description: "Рис, сливочный сыр, сыр Чедар, нори",
 		weight: "230",
 		price: "169",
 		quantity: "1"
@@ -79,7 +77,7 @@ const store = {
 		name: "Аляска",
 		type: "ролл",
 		picture: "/rolls/alaska.jpg",
-		decription: "Рис, сливочный сыр, лосось холодного копчения, авокадо, креветка, нори",
+		description: "Рис, сливочный сыр, лосось холодного копчения, авокадо, креветка, нори",
 		weight: "220",
 		price: "259",
 		quantity: "1"
@@ -88,7 +86,7 @@ const store = {
 		name: "Банито маки",
 		type: "ролл",
 		picture: "/rolls/bonito-maki.jpg",
-		decription: "Рис, сливочный сыр, огурец, угорь, стружка тунца, нори",
+		description: "Рис, сливочный сыр, огурец, угорь, стружка тунца, нори",
 		weight: "220",
 		price: "219",
 		quantity: "1"
@@ -97,7 +95,7 @@ const store = {
 		name: "Кунсей капа",
 		type: "ролл",
 		picture: "/rolls/kunsei-cappa.jpg",
-		decription: "Рис, сливочный сыр, огурец, лосось холодного копчения, кунжут, нори",
+		description: "Рис, сливочный сыр, огурец, лосось холодного копчения, кунжут, нори",
 		weight: "220",
 		price: "229",
 		quantity: "1"
@@ -106,7 +104,7 @@ const store = {
 		name: "Золотой унаги дракон",
 		type: "ролл",
 		picture: "/rolls/gold-unagi-dragon.jpg",
-		decription: "Рис, угорь, авокадо, кунжут, нори, унаги соус",
+		description: "Рис, угорь, авокадо, кунжут, нори, унаги соус",
 		weight: "210",
 		price: "259",
 		quantity: "1"
@@ -115,7 +113,7 @@ const store = {
 		name: "Икура сомаки",
 		type: "ролл",
 		picture: "/rolls/ikura-somaki.jpg",
-		decription: "Рис, сливочный сыр, икра лосося, нори",
+		description: "Рис, сливочный сыр, икра лосося, нори",
 		weight: "210",
 		price: "279",
 		quantity: "1"
@@ -124,7 +122,7 @@ const store = {
 		name: "Мадагаскар",
 		type: "ролл",
 		picture: "/rolls/madagascar.jpg",
-		decription: "Рис, окунь жареный, зелёный лук, тобико, кунжут, соус унаги, нори",
+		description: "Рис, окунь жареный, зелёный лук, тобико, кунжут, соус унаги, нори",
 		weight: "230",
 		price: "229",
 		quantity: "1"
@@ -133,7 +131,7 @@ const store = {
 		name: "Майами",
 		type: "ролл",
 		picture: "/rolls/mayami.jpg",
-		decription: "Рис, сливочный сыр, огурец, лосось копчёный, укроп, нори",
+		description: "Рис, сливочный сыр, огурец, лосось копчёный, укроп, нори",
 		weight: "220",
 		price: "199",
 		quantity: "1"
@@ -142,7 +140,7 @@ const store = {
 		name: "Йоджи маки",
 		type: "ролл",
 		picture: "/rolls/yodghi-maki.jpg",
-		decription: "Рис, угорь, сливочный сыр, огурец, имбирь, нори",
+		description: "Рис, угорь, сливочный сыр, огурец, имбирь, нори",
 		weight: "260",
 		price: "380",
 		quantity: "1"
@@ -151,7 +149,7 @@ const store = {
 		name: "Cин унаги",
 		type: "ролл",
 		picture: "/rolls/sin-unagi.jpg",
-		decription: "Рис, сливочный сыр, угорь, авокадо, соус унаги, кунжут, нори",
+		description: "Рис, сливочный сыр, угорь, авокадо, соус унаги, кунжут, нори",
 		weight: "220",
 		price: "249",
 		quantity: "1"
@@ -160,7 +158,7 @@ const store = {
 		name: "Скандинавия",
 		type: "ролл",
 		picture: "/rolls/skandinavia.jpg",
-		decription: "Рис, сливочный сыр, копчёный лосось, зелёный лук, нори",
+		description: "Рис, сливочный сыр, копчёный лосось, зелёный лук, нори",
 		weight: "220",
 		price: "279",
 		quantity: "1"
@@ -169,7 +167,7 @@ const store = {
 		name: "Калифорния с креветкой",
 		type: "ролл",
 		picture: "/rolls/california-krevets.jpg",
-		decription: "Рис, креветка, огурец, майонез, тобико, нори",
+		description: "Рис, креветка, огурец, майонез, тобико, нори",
 		weight: "240",
 		price: "259",
 		quantity: "1"
@@ -178,7 +176,7 @@ const store = {
 		name: "Филадельфия делюкс",
 		type: "ролл",
 		picture: "/rolls/philadelphia-delux.jpg",
-		decription: "Рис, семга, японский омлет тамаго, сливочный сыр, икра лосося, нори",
+		description: "Рис, семга, японский омлет тамаго, сливочный сыр, икра лосося, нори",
 		weight: "270",
 		price: "289",
 		quantity: "1"
@@ -187,7 +185,7 @@ const store = {
 		name: "Тори ролл",
 		type: "ролл",
 		picture: "/rolls/tori-roll.jpg",
-		decription: "Рис, курица, огурец, авокадо, майонез, лук зелёный, нори",
+		description: "Рис, курица, огурец, авокадо, майонез, лук зелёный, нори",
 		weight: "210",
 		price: "189",
 		quantity: "1"
@@ -196,7 +194,7 @@ const store = {
 		name: "Саяке маки",
 		type: "ролл",
 		picture: "/rolls/sayake-maki.jpg",
-		decription: "Рис, сыр сливочный, лосось, авокадо, копчёный угорь, огурец, соус унаги, кунжут, нори",
+		description: "Рис, сыр сливочный, лосось, авокадо, копчёный угорь, огурец, соус унаги, кунжут, нори",
 		weight: "250",
 		price: "279",
 		quantity: "1"
@@ -205,7 +203,7 @@ const store = {
 		name: "Хауз ролл",
 		type: "ролл",
 		picture: "/rolls/khaz-roll.jpg",
-		decription: "Рис, огурец, тунец, майонез, нори",
+		description: "Рис, огурец, тунец, майонез, нори",
 		weight: "200",
 		price: "179",
 		quantity: "1"
@@ -214,7 +212,7 @@ const store = {
 		name: "Шахматы роллы",
 		type: "ролл",
 		picture: "/rolls/chess.jpg",
-		decription: "Рис, огурец, омлет, тигровая креветка, сливочный сыр, сёмга, икра тобико, кунжут, нори",
+		description: "Рис, огурец, омлет, тигровая креветка, сливочный сыр, сёмга, икра тобико, кунжут, нори",
 		weight: "250",
 		price: "259",
 		quantity: "1"
@@ -223,7 +221,7 @@ const store = {
 		name: "Филадельфия",
 		type: "ролл",
 		picture: "/rolls/philadelfia.jpg",
-		decription: "Рис, сыр сливочный, слабосоленый лосось, нори",
+		description: "Рис, сыр сливочный, слабосоленый лосось, нори",
 		weight: "220",
 		price: "249",
 		quantity: "1"
@@ -232,7 +230,7 @@ const store = {
 		name: "Цезарь ролл",
 		type: "ролл",
 		picture: "/rolls/tsezar-roll.jpg",
-		decription: "Рис, курица, огурец, сыр пармезан, соус цезарь, кунжут, нори",
+		description: "Рис, курица, огурец, сыр пармезан, соус цезарь, кунжут, нори",
 		weight: "230",
 		price: "159",
 		quantity: "1"
@@ -241,7 +239,7 @@ const store = {
 		name: "Филадельфия с луком",
 		type: "ролл",
 		picture: "/rolls/philadelphia-green.jpg",
-		decription: "Рис, сыр сливочный, слабосолёная сёмга, зелёный лук, нори",
+		description: "Рис, сыр сливочный, слабосолёная сёмга, зелёный лук, нори",
 		weight: "240",
 		price: "249",
 		quantity: "1"
@@ -250,7 +248,7 @@ const store = {
 		name: "Кавагиши",
 		type: "ролл",
 		picture: "/rolls/kawagishi.jpg",
-		decription: "Рис, мидии, огурец, кунжут, нори",
+		description: "Рис, мидии, огурец, кунжут, нори",
 		weight: "200",
 		price: "129",
 		quantity: "1"
@@ -259,7 +257,7 @@ const store = {
 		name: "Зелёный дракон",
 		type: "ролл",
 		picture: "/rolls/green-dragon.jpg",
-		decription: "Рис, слабосоленый лосось, сыр сливочный, угорь, огурец, лук зеленый, икра тобико, соус унаги, нори",
+		description: "Рис, слабосоленый лосось, сыр сливочный, угорь, огурец, лук зеленый, икра тобико, соус унаги, нори",
 		weight: "250",
 		price: "299",
 		quantity: "1"
@@ -268,7 +266,7 @@ const store = {
 		name: "Гейша",
 		type: "ролл",
 		picture: "/rolls/geisha.jpg",
-		decription: "Рис, сливочный сыр, слабосоленый лосось, огурец, нори",
+		description: "Рис, сливочный сыр, слабосоленый лосось, огурец, нори",
 		weight: "210",
 		price: "199",
 		quantity: "1"
@@ -277,7 +275,7 @@ const store = {
 		name: "Инь-Янь",
 		type: "ролл",
 		picture: "/rolls/in-yan.jpg",
-		decription: "Рис, лосось, болагрский перец, сыр сливочный, огурец, соус унаги, кунжут, нори",
+		description: "Рис, лосось, болагрский перец, сыр сливочный, огурец, соус унаги, кунжут, нори",
 		weight: "210",
 		price: "209",
 		quantity: "1"
@@ -286,7 +284,7 @@ const store = {
 		name: "Калифорния",
 		type: "ролл",
 		picture: "/rolls/california.jpg",
-		decription: "Рис, снежный краб, огурец, авокадо, икра тобико, майонез, нори",
+		description: "Рис, снежный краб, огурец, авокадо, икра тобико, майонез, нори",
 		weight: "230",
 		price: "249",
 		quantity: "1"
@@ -295,7 +293,7 @@ const store = {
 		name: "Канада",
 		type: "ролл",
 		picture: "/rolls/canada.jpg",
-		decription: "Рис, сыр сливочный, угорь, копченый лосось, авокадо, кунжут, соус унаги, нори",
+		description: "Рис, сыр сливочный, угорь, копченый лосось, авокадо, кунжут, соус унаги, нори",
 		weight: "260",
 		price: "279",
 		quantity: "1"
@@ -304,7 +302,7 @@ const store = {
 		name: "Нежный угорь",
 		type: "ролл",
 		picture: "/rolls/sweet-ugor.jpg",
-		decription: "Рис, сливочный сыр, угорь, авокадо, кунжут, нори",
+		description: "Рис, сливочный сыр, угорь, авокадо, кунжут, нори",
 		weight: "230",
 		price: "229",
 		quantity: "1"
@@ -313,7 +311,7 @@ const store = {
 		name: "Планета маки",
 		type: "ролл",
 		picture: "/rolls/planeta-maki.jpg",
-		decription: "Рис, сыр сливочный, слабосолёный лосоь, такуан, салат, нори",
+		description: "Рис, сыр сливочный, слабосолёный лосоь, такуан, салат, нори",
 		weight: "210",
 		price: "199",
 		quantity: "1"
@@ -322,7 +320,7 @@ const store = {
 		name: "Онигара",
 		type: "ролл",
 		picture: "/rolls/onigara.jpg",
-		decription: "Рис, сыр сливочный, угорь, такуан, соус унаги, кунжут, нори",
+		description: "Рис, сыр сливочный, угорь, такуан, соус унаги, кунжут, нори",
 		weight: "250",
 		price: "299",
 		quantity: "1"
@@ -331,7 +329,7 @@ const store = {
 		name: "Саяке унаги маки",
 		type: "ролл",
 		picture: "/rolls/sayake-unagi-roll.jpg",
-		decription: "Рис, сливочный сыр, огурец, слабосоленый лосось, угорь, тобико, унаги соус, нори",
+		description: "Рис, сливочный сыр, огурец, слабосоленый лосось, угорь, тобико, унаги соус, нори",
 		weight: "240",
 		price: "249",
 		quantity: "1"
@@ -340,7 +338,7 @@ const store = {
 		name: "Филадельфия с огурцом",
 		type: "ролл",
 		picture: "/rolls/philadelfia-ogurets.jpg",
-		decription: "Рис, сыр сливочный, слабосоленый лосось, огурец, нори",
+		description: "Рис, сыр сливочный, слабосоленый лосось, огурец, нори",
 		weight: "240",
 		price: "249",
 		quantity: "1"
@@ -349,7 +347,7 @@ const store = {
 		name: "Унаги ролл",
 		type: "ролл",
 		picture: "/rolls/unagi.jpg",
-		decription: "Рис, огурец, угорь, соус унаги, кунжут, нори",
+		description: "Рис, огурец, угорь, соус унаги, кунжут, нори",
 		weight: "220",
 		price: "219",
 		quantity: "1"
@@ -358,7 +356,7 @@ const store = {
 		name: "Унаги маки ролл",
 		type: "ролл",
 		picture: "/rolls/unagi-maki.jpg",
-		decription: "Рис, огурец, копчёный угорь, кунжут, соус унаги, нори",
+		description: "Рис, огурец, копчёный угорь, кунжут, соус унаги, нори",
 		weight: "200",
 		price: "189",
 		quantity: "1"
@@ -367,7 +365,7 @@ const store = {
 		name: "Унаги тидзу",
 		type: "ролл",
 		picture: "/rolls/unagi-titzu.jpg",
-		decription: "Рис, сливочный сыр, угорь, огурец, слабосоленый лосось, нори",
+		description: "Рис, сливочный сыр, угорь, огурец, слабосоленый лосось, нори",
 		weight: "250",
 		price: "249",
 		quantity: "1"
@@ -376,7 +374,7 @@ const store = {
 		name: "Фудзияма",
 		type: "ролл",
 		picture: "/rolls/phudziyama.jpg",
-		decription: "Рис, сливочный сыр, мидии, омлет, угорь, огурец, нори",
+		description: "Рис, сливочный сыр, мидии, омлет, угорь, огурец, нори",
 		weight: "260",
 		price: "249",
 		quantity: "1"
@@ -385,7 +383,7 @@ const store = {
 		name: "Экспресс",
 		type: "ролл",
 		picture: "/rolls/express.jpg",
-		decription: "Рис, сливочный сыр, куриное филе, огурец, кунжут белый и чёрный, тобико, нори",
+		description: "Рис, сливочный сыр, куриное филе, огурец, кунжут белый и чёрный, тобико, нори",
 		weight: "260",
 		price: "229",
 		quantity: "1"
@@ -394,7 +392,7 @@ const store = {
 		name: "Филадельфия с креветкой",
 		type: "ролл",
 		picture: "/rolls/philadelfia-krevets.jpg",
-		decription: "Рис, сыр сливочный, слабосолёный лосось, креветки тигровые, нори",
+		description: "Рис, сыр сливочный, слабосолёный лосось, креветки тигровые, нори",
 		weight: "230",
 		price: "259",
 		quantity: "1"
@@ -403,7 +401,7 @@ const store = {
 		name: "Якудза",
 		type: "ролл",
 		picture: "/rolls/yakudza.jpg",
-		decription: "Рис, тигровая креветка, пекинская капуста, тобико, зелёный лук, соус спайси, кунжут, нори",
+		description: "Рис, тигровая креветка, пекинская капуста, тобико, зелёный лук, соус спайси, кунжут, нори",
 		weight: "210",
 		price: "269",
 		quantity: "1"
@@ -412,7 +410,7 @@ const store = {
 		name: "Норт ролл",
 		type: "ролл",
 		picture: "/rolls/north-roll.jpg",
-		decription: "Рис, сыр сливочный, угорь, слабосоленый лосось, тобико, кунжут, нори",
+		description: "Рис, сыр сливочный, угорь, слабосоленый лосось, тобико, кунжут, нори",
 		weight: "250",
 		price: "259",
 		quantity: "1"
@@ -421,7 +419,7 @@ const store = {
 		name: "Окинава",
 		type: "ролл",
 		picture: "/rolls/okinava.jpg",
-		decription: "Рис, омлет, огурец, соус с морским гребешком и слабосоленым лососем, японский майонез, нори",
+		description: "Рис, омлет, огурец, соус с морским гребешком и слабосоленым лососем, японский майонез, нори",
 		weight: "230",
 		price: "219",
 		quantity: "1"
@@ -430,7 +428,7 @@ const store = {
 		name: "Унаги филадельфия",
 		type: "ролл",
 		picture: "/rolls/unagi-filadelfia.jpg",
-		decription: "Рис, сливочный сыр, огурец, угорь, тобико, нори",
+		description: "Рис, сливочный сыр, огурец, угорь, тобико, нори",
 		weight: "240",
 		price: "269",
 		quantity: "1"
@@ -439,7 +437,7 @@ const store = {
 		name: "Гурмэ маки",
 		type: "ролл",
 		picture: "/rolls/gurme-maki.jpg",
-		decription: "Рис, сливочный сыр, тунец, слабосоленый лосось, лук зелёный, нори",
+		description: "Рис, сливочный сыр, тунец, слабосоленый лосось, лук зелёный, нори",
 		weight: "210",
 		price: "229",
 		quantity: "1"
@@ -448,7 +446,7 @@ const store = {
 		name: "Бостон",
 		type: "ролл",
 		picture: "/rolls/boston.png",
-		decription: "Рис, тунец, авокадо, кунжут, тобико, нори",
+		description: "Рис, тунец, авокадо, кунжут, тобико, нори",
 		weight: "210",
 		price: "219",
 		quantity: "1"
@@ -457,7 +455,7 @@ const store = {
 		name: "Ролл с огурцом",
 		type: "Классические роллы",
 		picture: "/rolls/roll-ogurets.jpg",
-		decription: "Рис, огурец, кунжут, нори",
+		description: "Рис, огурец, кунжут, нори",
 		weight: "100",
 		price: "59",
 		quantity: "1"
@@ -466,7 +464,7 @@ const store = {
 		name: "Ролл с авокадо",
 		type: "Классические роллы",
 		picture: "/rolls/roll-avocado.jpg",
-		decription: "Рис, авокадо, нори",
+		description: "Рис, авокадо, нори",
 		weight: "100",
 		price: "79",
 		quantity: "1"
@@ -475,7 +473,7 @@ const store = {
 		name: "Ролл с слабосоленым лососем",
 		type: "Классические роллы",
 		picture: "/rolls/losos-roll.jpg",
-		decription: "Рис, слабосоленый лосось, нори",
+		description: "Рис, слабосоленый лосось, нори",
 		weight: "100",
 		price: "89",
 		quantity: "1"
@@ -484,7 +482,7 @@ const store = {
 		name: "Ролл с лососем копченым",
 		type: "Классические роллы",
 		picture: "/rolls/roll-semga.jpg",
-		decription: "Рис, копченый лосось, нори",
+		description: "Рис, копченый лосось, нори",
 		weight: "100",
 		price: "89",
 		quantity: "1"
@@ -493,7 +491,7 @@ const store = {
 		name: "Ролл с угрем",
 		type: "Классические роллы",
 		picture: "/rolls/roll-ugor.jpg",
-		decription: "Рис, угорь, нори",
+		description: "Рис, угорь, нори",
 		weight: "100",
 		price: "99",
 		quantity: "1"
@@ -502,7 +500,7 @@ const store = {
 		name: "Ролл с креветкой",
 		type: "Классические роллы",
 		picture: "/rolls/krevetka-roll.jpg",
-		decription: "Рис, тигровая креветка, сыр сливочный",
+		description: "Рис, тигровая креветка, сыр сливочный",
 		weight: "100",
 		price: "99",
 		quantity: "1"
@@ -511,7 +509,7 @@ const store = {
 		name: "Ролл с тунцом",
 		type: "Классические роллы",
 		picture: "/rolls/roll-tunets.jpg",
-		decription: "Рис, тунец, нори",
+		description: "Рис, тунец, нори",
 		weight: "100",
 		price: "109",
 		quantity: "1"
@@ -521,7 +519,7 @@ const store = {
 		name: "Запеченный лосось",
 		type: "Запеченные роллы",
 		picture: "/baked/bokedlosos.jpg",
-		decription: "Рис, сыр сливочный, слабосоленый лосось, майрнез, соус спайси, тобико, нори",
+		description: "Рис, сыр сливочный, слабосоленый лосось, майрнез, соус спайси, тобико, нори",
 		weight: "270",
 		price: "259",
 		quantity: "1"
@@ -530,7 +528,7 @@ const store = {
 		name: "Запеченная креветка",
 		type: "Запеченные роллы",
 		picture: "/baked/krevets.jpg",
-		decription: "Рис, сливочный сыр, авокадо, креветка тигровая, тобико, кунжут, соус спайси, нори",
+		description: "Рис, сливочный сыр, авокадо, креветка тигровая, тобико, кунжут, соус спайси, нори",
 		weight: "270",
 		price: "259",
 		quantity: "1"
@@ -539,7 +537,7 @@ const store = {
 		name: "Запеченная филадельфия",
 		type: "Запеченные роллы",
 		picture: "/baked/philadelfia.jpg",
-		decription: "Рис, сливочный сыр, слабосоленый лосось, соус спайси, нори",
+		description: "Рис, сливочный сыр, слабосоленый лосось, соус спайси, нори",
 		weight: "270",
 		price: "279",
 		quantity: "1"
@@ -548,7 +546,7 @@ const store = {
 		name: "Запеченные мидии",
 		type: "Запеченные роллы",
 		picture: "/baked/midia.jpg",
-		decription: "Рис, сыр сливочный, снежный краб, мидии, соус спайси, нори",
+		description: "Рис, сыр сливочный, снежный краб, мидии, соус спайси, нори",
 		weight: "240",
 		price: "189",
 		quantity: "1"
@@ -557,7 +555,7 @@ const store = {
 		name: "Запеченный гребешок",
 		type: "Запеченные роллы",
 		picture: "/baked/grebeshok.jpg",
-		decription: "Рис, слабосоленый лосось, морской гребешок, сливочный сыр, соус спайси, нори",
+		description: "Рис, слабосоленый лосось, морской гребешок, сливочный сыр, соус спайси, нори",
 		weight: "240",
 		price: "189",
 		quantity: "1"
@@ -566,7 +564,7 @@ const store = {
 		name: "Запеченный кальмар",
 		type: "Запеченные роллы",
 		picture: "/baked/calmar.jpg",
-		decription: "Рис, огурец, кальмар, сливочный сыр, соус спайси, майонез, кунжут, нори",
+		description: "Рис, огурец, кальмар, сливочный сыр, соус спайси, майонез, кунжут, нори",
 		weight: "240",
 		price: "159",
 		quantity: "1"
@@ -575,7 +573,7 @@ const store = {
 		name: "Запеченный угорь",
 		type: "Запеченные роллы",
 		picture: "/baked/ugor.jpg",
-		decription: "Рис, сливочный сыр, угорь, соус спайси, тобтко, майонез, нори",
+		description: "Рис, сливочный сыр, угорь, соус спайси, тобтко, майонез, нори",
 		weight: "240",
 		price: "229",
 		quantity: "1"
@@ -585,7 +583,7 @@ const store = {
 		name: "Унаги темпура",
 		type: "Горячие роллы",
 		picture: "/tempura/unagi-tempura.jpg",
-		decription: "Рис, угорь, авокадо, салат, тобико, темпура, нори",
+		description: "Рис, угорь, авокадо, салат, тобико, темпура, нори",
 		weight: "250",
 		price: "239",
 		quantity: "1"
@@ -594,7 +592,7 @@ const store = {
 		name: "Цезарь темпура",
 		type: "Горячие роллы",
 		picture: "/tempura/tsezar-roll.jpg",
-		decription: "Рис, курица, помидор, соус цезарь, салат, темпура, нори",
+		description: "Рис, курица, помидор, соус цезарь, салат, темпура, нори",
 		weight: "250",
 		price: "199",
 		quantity: "1"
@@ -603,7 +601,7 @@ const store = {
 		name: "Сяки спайси темпура",
 		type: "Горячие роллы",
 		picture: "/tempura/syake.jpg",
-		decription: "Рис, слабосоленый лосось, огурец, соус спайси, темпура, нори",
+		description: "Рис, слабосоленый лосось, огурец, соус спайси, темпура, нори",
 		weight: "230",
 		price: "199",
 		quantity: "1"
@@ -612,7 +610,7 @@ const store = {
 		name: "Эби спайси темпура",
 		type: "Горячие роллы",
 		picture: "/tempura/abi-space-tempura.jpg",
-		decription: "Рис, тигровые креветки, соус спайси, тобико, темпура, нори",
+		description: "Рис, тигровые креветки, соус спайси, тобико, темпура, нори",
 		weight: "230",
 		price: "219",
 		quantity: "1"
@@ -621,7 +619,7 @@ const store = {
 		name: "Чиз темпура",
 		type: "Горячие роллы",
 		picture: "/tempura/cheese-tempura.jpg",
-		decription: "Рис, сыр сливочный, слабосоленый лосось, креветка тгровая, темпура, нори",
+		description: "Рис, сыр сливочный, слабосоленый лосось, креветка тгровая, темпура, нори",
 		weight: "220",
 		price: "249",
 		quantity: "1"
@@ -630,7 +628,7 @@ const store = {
 		name: "Горячая филадельфия",
 		type: "Горячие роллы",
 		picture: "/tempura/hot-philadelfia.jpg",
-		decription: "Рис, сыр сливочный, слабосоленый лосось, огурец, авокадо, темпура, нори",
+		description: "Рис, сыр сливочный, слабосоленый лосось, огурец, авокадо, темпура, нори",
 		weight: "250",
 		price: "239",
 		quantity: "1"
@@ -639,7 +637,7 @@ const store = {
 		name: "Горячая гейша",
 		type: "Горячие роллы",
 		picture: "/tempura/hot-geysha.jpg",
-		decription: "Рис, сыр сливочный, огурец, креветка тигровая, угорь, темпура, нори",
+		description: "Рис, сыр сливочный, огурец, креветка тигровая, угорь, темпура, нори",
 		weight: "250",
 		price: "259",
 		quantity: "1"
@@ -648,7 +646,7 @@ const store = {
 		name: "Темпура тортилья с лососем",
 		type: "Горячие роллы",
 		picture: "/tempura/tort-losos.jpg",
-		decription: "Сыр сливочный, тортилья, копченый лосось, лук зеленый, темпура",
+		description: "Сыр сливочный, тортилья, копченый лосось, лук зеленый, темпура",
 		weight: "300",
 		price: "239",
 		quantity: "1"
@@ -657,7 +655,7 @@ const store = {
 		name: "Темпура тортилья с беконом",
 		type: "Горячие роллы",
 		picture: "/tempura/tort-becon.jpg",
-		decription: "Сыр сливочный, тортилья, бекон, овощи, темпура",
+		description: "Сыр сливочный, тортилья, бекон, овощи, темпура",
 		weight: "300",
 		price: "249",
 		quantity: "1"
@@ -667,7 +665,7 @@ const store = {
 		name: "Кальмары в темпуре",
 		type: "Темпура",
 		picture: "/tempura/calmars.jpg",
-		decription: "Кольца кальмара, темпура",
+		description: "Кольца кальмара, темпура",
 		weight: "100",
 		price: "99",
 		quantity: "1"
@@ -676,7 +674,7 @@ const store = {
 		name: "Креветки в темпуре",
 		type: "Темпура",
 		picture: "/tempura/krevets.png",
-		decription: "Тигровые креветки, темпура",
+		description: "Тигровые креветки, темпура",
 		weight: "120",
 		price: "289",
 		quantity: "1"
@@ -685,7 +683,7 @@ const store = {
 		name: "Овощи в темпуре",
 		type: "Темпура",
 		picture: "/tempura/ovoschi.jpg",
-		decription: "Болгарский перец, морковь, кабачок, луковые кольца, темпура",
+		description: "Болгарский перец, морковь, кабачок, луковые кольца, темпура",
 		weight: "170",
 		price: "139",
 		quantity: "1"
@@ -694,7 +692,7 @@ const store = {
 		name: "Куриное филе в темпуре",
 		type: "Темпура",
 		picture: "/tempura/kurica.jpg",
-		decription: "Куриное филе, темпура",
+		description: "Куриное филе, темпура",
 		weight: "150",
 		price: "119",
 		quantity: "1"
@@ -703,7 +701,7 @@ const store = {
 		name: "Рисовые шарики в темпуре",
 		type: "Темпура",
 		picture: "/tempura/rice.jpg",
-		decription: "Рис, слабосоленый лосось, соус, темпура",
+		description: "Рис, слабосоленый лосось, соус, темпура",
 		weight: "230",
 		price: "199",
 		quantity: "1"
@@ -712,7 +710,7 @@ const store = {
 		name: "Куринные крылья в темпуре",
 		type: "Темпура",
 		picture: "/tempura/krylya.jpg",
-		decription: "",
+		description: "",
 		weight: "6шт",
 		price: "249",
 		quantity: "1"
@@ -722,7 +720,7 @@ const store = {
 		name: "Тортилья с угрем",
 		type: "Роллы в торитлье",
 		picture: "/torts/ugor.jpg",
-		decription: "Сырная тортилья, сыр сливочный, угорь, зеленый лук",
+		description: "Сырная тортилья, сыр сливочный, угорь, зеленый лук",
 		weight: "235",
 		price: "289",
 		quantity: "1"
@@ -731,7 +729,7 @@ const store = {
 		name: "Тортилья с лососем",
 		type: "Роллы в торитлье",
 		picture: "/torts/losos.jpg",
-		decription: "Сырная тортилья, сыр сливочный, копченый лосось, огурец, помидор",
+		description: "Сырная тортилья, сыр сливочный, копченый лосось, огурец, помидор",
 		weight: "235",
 		price: "219",
 		quantity: "1"
@@ -740,7 +738,7 @@ const store = {
 		name: "Тортилья с говядиной",
 		type: "Роллы в торитлье",
 		picture: "/torts/maki-govyadina.jpg",
-		decription: "Сырная тортилья, сыр сливочный, говядина, огурец, помидор, салат",
+		description: "Сырная тортилья, сыр сливочный, говядина, огурец, помидор, салат",
 		weight: "235",
 		price: "199",
 		quantity: "1"
@@ -749,7 +747,7 @@ const store = {
 		name: "Тортилья с беконом",
 		type: "Роллы в торитлье",
 		picture: "/torts/becon.jpg",
-		decription: "Сырная тортилья, сыр сливочный, бекон, помидор, перец, салат",
+		description: "Сырная тортилья, сыр сливочный, бекон, помидор, перец, салат",
 		weight: "235",
 		price: "199",
 		quantity: "1"
@@ -758,7 +756,7 @@ const store = {
 		name: "Тортилья с курицей",
 		type: "Роллы в торитлье",
 		picture: "/torts/maki-kurica.jpg",
-		decription: "Сырная тортилья, сыр сливочный, курица, огурец, помидор, салат",
+		description: "Сырная тортилья, сыр сливочный, курица, огурец, помидор, салат",
 		weight: "235",
 		price: "169",
 		quantity: "1"
@@ -767,7 +765,7 @@ const store = {
 		name: "Тортилья с овощами",
 		type: "Роллы в торитлье",
 		picture: "/torts/ovoschi.jpg",
-		decription: "Сырная тортилья, сыр сливочный, овощи",
+		description: "Сырная тортилья, сыр сливочный, овощи",
 		weight: "235",
 		price: "169",
 		quantity: "1"
@@ -777,7 +775,7 @@ const store = {
 		name: "Принт",
 		type: "Роллы в японском омлете",
 		picture: "/omlet/print.jpg",
-		decription: "Рис, сыр сливочный, лосось копченый, авокадо, омлет японский, салат, нори",
+		description: "Рис, сыр сливочный, лосось копченый, авокадо, омлет японский, салат, нори",
 		weight: "230",
 		price: "159",
 		quantity: "1"
@@ -786,7 +784,7 @@ const store = {
 		name: "Тамаго эби маки",
 		type: "Роллы в японском омлете",
 		picture: "/omlet/tamago-maki.jpg",
-		decription: "Рис, сыр ливочный, тигровая креветка, омлет японский, нори",
+		description: "Рис, сыр ливочный, тигровая креветка, омлет японский, нори",
 		weight: "230",
 		price: "199",
 		quantity: "1"
@@ -795,7 +793,7 @@ const store = {
 		name: "Вегас",
 		type: "Роллы в японском омлете",
 		picture: "/omlet/vegas.jpg",
-		decription: "Рис, сыр ливочный, угорь, огурец, авокадо, омлет японский, соус спайси, нори",
+		description: "Рис, сыр ливочный, угорь, огурец, авокадо, омлет японский, соус спайси, нори",
 		weight: "240",
 		price: "169",
 		quantity: "1"
@@ -804,7 +802,7 @@ const store = {
 		name: "Куцу",
 		type: "Роллы в японском омлете",
 		picture: "/omlet/kutsu.jpg",
-		decription: "Рис, сыр ливочный, курица, помидор, омлет японский, салат, нори",
+		description: "Рис, сыр ливочный, курица, помидор, омлет японский, салат, нори",
 		weight: "240",
 		price: "149",
 		quantity: "1"
@@ -813,7 +811,7 @@ const store = {
 		name: "Филадельфия в омлете",
 		type: "Роллы в японском омлете",
 		picture: "/omlet/philadelfia-omlet.jpg",
-		decription: "Рис, сыр ливочный, авокадо, омлет японский, тобико, нори",
+		description: "Рис, сыр ливочный, авокадо, омлет японский, тобико, нори",
 		weight: "220",
 		price: "129",
 		quantity: "1"
@@ -822,7 +820,7 @@ const store = {
 		name: "Чакин икура",
 		type: "Роллы в японском омлете",
 		picture: "/omlet/chakin-ikura.jpg",
-		decription: "Рис, сыр ливочный, омлет японский, икра лосося, нори",
+		description: "Рис, сыр ливочный, омлет японский, икра лосося, нори",
 		weight: "220",
 		price: "209",
 		quantity: "1"
@@ -832,7 +830,7 @@ const store = {
 		name: "Сяке",
 		type: "Суши",
 		picture: "/sushi/syake-sushi.jpg",
-		decription: "Рис, слабосоленый лосось",
+		description: "Рис, слабосоленый лосось",
 		weight: "35",
 		price: "39",
 		quantity: "1"
@@ -841,7 +839,7 @@ const store = {
 		name: "Унаги",
 		type: "Суши",
 		picture: "/sushi/unagi-sushi.jpg",
-		decription: "Рис, угорь, нори",
+		description: "Рис, угорь, нори",
 		weight: "35",
 		price: "59",
 		quantity: "1"
@@ -850,7 +848,7 @@ const store = {
 		name: "Эби",
 		type: "Суши",
 		picture: "/sushi/ebi-sushi.jpg",
-		decription: "Рис, тигровая креветка",
+		description: "Рис, тигровая креветка",
 		weight: "35",
 		price: "69",
 		quantity: "1"
@@ -860,7 +858,7 @@ const store = {
 		name: "Умисай гюнику",
 		type: "Салаты",
 		picture: "/salats/guneku.jpg",
-		decription: "Острая говядина, болгарский перец, грибы, морковь, лук, перец чили, чеснок",
+		description: "Острая говядина, болгарский перец, грибы, морковь, лук, перец чили, чеснок",
 		weight: "200",
 		price: "209",
 		quantity: "1"
@@ -869,7 +867,7 @@ const store = {
 		name: "Сяки сарада",
 		type: "Салаты",
 		picture: "/salats/sarada.jpg",
-		decription: "Пеконская капуста, салат, помидор, лук, морковь, слабосоленый лосось, соус",
+		description: "Пеконская капуста, салат, помидор, лук, морковь, слабосоленый лосось, соус",
 		weight: "200",
 		price: "229",
 		quantity: "1"
@@ -878,7 +876,7 @@ const store = {
 		name: "Тикен сарада",
 		type: "Салаты",
 		picture: "/salats/sarada.jpg",
-		decription: "Салат, пекинская капуста, морковь, перец болгарский, помидор, лук, курица, соус",
+		description: "Салат, пекинская капуста, морковь, перец болгарский, помидор, лук, курица, соус",
 		weight: "210",
 		price: "199",
 		quantity: "1"
@@ -887,7 +885,7 @@ const store = {
 		name: "Цезарь с креветкой",
 		type: "Салаты",
 		picture: "/salats/tsezar-krevets.jpg",
-		decription: "Салат, помдор, сыр, яйцо, сухари, креветки, соус",
+		description: "Салат, помдор, сыр, яйцо, сухари, креветки, соус",
 		weight: "230",
 		price: "299",
 		quantity: "1"
@@ -896,7 +894,7 @@ const store = {
 		name: "Цезарь с курицей",
 		type: "Салаты",
 		picture: "/salats/tsezar-kurica.jpg",
-		decription: "Салат, помдор, сыр, яйцо, сухари, курица, соус",
+		description: "Салат, помдор, сыр, яйцо, сухари, курица, соус",
 		weight: "230",
 		price: "189",
 		quantity: "1"
@@ -905,7 +903,7 @@ const store = {
 		name: "Киото",
 		type: "Салаты",
 		picture: "/salats/kioto.jpg",
-		decription: "Свиная шея, морковь, перец болгарский, лук, капуста пекинская, лист салата, кунжут, соус",
+		description: "Свиная шея, морковь, перец болгарский, лук, капуста пекинская, лист салата, кунжут, соус",
 		weight: "230",
 		price: "229",
 		quantity: "1"
@@ -915,7 +913,7 @@ const store = {
 		name: "Рис с креветками",
 		type: "Рис, лапша",
 		picture: "/rice/rice-krevets.jpg",
-		decription: "Рис, креветки тигровые, омлет японский, соус",
+		description: "Рис, креветки тигровые, омлет японский, соус",
 		weight: "290",
 		price: "199",
 		quantity: "1"
@@ -924,7 +922,7 @@ const store = {
 		name: "Рис с говядиной",
 		type: "Рис, лапша",
 		picture: "/rice/rice-telyatina.jpg",
-		decription: "Рис, говядина, овощи, соус",
+		description: "Рис, говядина, овощи, соус",
 		weight: "290",
 		price: "189",
 		quantity: "1"
@@ -933,7 +931,7 @@ const store = {
 		name: "Рис со свининой",
 		type: "Рис, лапша",
 		picture: "/rice/rice-telyatina.jpg",
-		decription: "Рис, свинина, овощи, соус",
+		description: "Рис, свинина, овощи, соус",
 		weight: "290",
 		price: "189",
 		quantity: "1"
@@ -942,7 +940,7 @@ const store = {
 		name: "Рис с курицей",
 		type: "Рис, лапша",
 		picture: "/rice/rice-kurica.jpg",
-		decription: "Рис, курица, овощи, соус",
+		description: "Рис, курица, овощи, соус",
 		weight: "290",
 		price: "179",
 		quantity: "1"
@@ -951,7 +949,7 @@ const store = {
 		name: "Рис с овощами",
 		type: "Рис, лапша",
 		picture: "/rice/rice-ovoschi.jpg",
-		decription: "Рис, овощи",
+		description: "Рис, овощи",
 		weight: "290",
 		price: "169",
 		quantity: "1"
@@ -960,7 +958,7 @@ const store = {
 		name: "Лапша с говядиной",
 		type: "Рис, лапша",
 		picture: "/rice/lapsha-govyadina.jpg",
-		decription: "Лапша соба (гречневая), говядина, овощи",
+		description: "Лапша соба (гречневая), говядина, овощи",
 		weight: "300",
 		price: "229",
 		quantity: "1"
@@ -969,7 +967,7 @@ const store = {
 		name: "Лапша со свининой",
 		type: "Рис, лапша",
 		picture: "/rice/lapsha-govyadina.jpg",
-		decription: "Лапша соба (гречневая), свинина, овощи",
+		description: "Лапша соба (гречневая), свинина, овощи",
 		weight: "300",
 		price: "229",
 		quantity: "1"
@@ -978,7 +976,7 @@ const store = {
 		name: "Лапша с курицей",
 		type: "Рис, лапша",
 		picture: "/rice/lapsha-kurica.jpg",
-		decription: "Лапша соба (гречневая), курица, овощи, кунжут",
+		description: "Лапша соба (гречневая), курица, овощи, кунжут",
 		weight: "300",
 		price: "219",
 		quantity: "1"
@@ -987,7 +985,7 @@ const store = {
 		name: "Лапша с морепродуктами",
 		type: "Рис, лапша",
 		picture: "/rice/lapsha-more.jpg",
-		decription: "Лапша удон, морепродукты, блинчик",
+		description: "Лапша удон, морепродукты, блинчик",
 		weight: "300",
 		price: "259",
 		quantity: "1"
@@ -996,7 +994,7 @@ const store = {
 		name: "Лапша с копченостями",
 		type: "Рис, лапша",
 		picture: "/rice/lapsha-kopchenosti.jpg",
-		decription: "Лапша удон, копчености, сливки, перец чили",
+		description: "Лапша удон, копчености, сливки, перец чили",
 		weight: "300",
 		price: "219",
 		quantity: "1"
@@ -1005,7 +1003,7 @@ const store = {
 		name: "Фунчоза с говядиной",
 		type: "Рис, лапша",
 		picture: "/rice/lapsha-govyadina.jpeg",
-		decription: "Фунчоза, говядина, овощи, соус",
+		description: "Фунчоза, говядина, овощи, соус",
 		weight: "290",
 		price: "229",
 		quantity: "1"
@@ -1014,7 +1012,7 @@ const store = {
 		name: "Фунчоза со свининой",
 		type: "Рис, лапша",
 		picture: "/rice/funchosa-svinina.jpg",
-		decription: "Фунчоза, свинина, овощи, соус",
+		description: "Фунчоза, свинина, овощи, соус",
 		weight: "290",
 		price: "229",
 		quantity: "1"
@@ -1023,7 +1021,7 @@ const store = {
 		name: "Фунчоза с курицей",
 		type: "Рис, лапша",
 		picture: "/rice/funchosa-kurica.jpg",
-		decription: "Фунчоза, курица, овощи, соус",
+		description: "Фунчоза, курица, овощи, соус",
 		weight: "290",
 		price: "219",
 		quantity: "1"
@@ -1033,7 +1031,7 @@ const store = {
 		name: "Набор Мини",
 		type: "Наборы",
 		picture: "/sets/mini.jpg",
-		decription: "Калифорния 1/2, Майами 1/2, Нежный угорь 1/2, 1 соус, 1 вассаби, 1 имбирь",
+		description: "Калифорния 1/2, Майами 1/2, Нежный угорь 1/2, 1 соус, 1 вассаби, 1 имбирь",
 		weight: "12шт, 340",
 		price: "329",
 		quantity: "1"
@@ -1042,7 +1040,7 @@ const store = {
 		name: "Набор №1",
 		type: "Наборы",
 		picture: "/sets/set-1.jpg",
-		decription: "Скандинавия 1/2, Майами 1/2, Филадельфия, ролл со слабосоленым лососем, суши сяке 2шт, 2 соуса, 2 вассаби, 2 имбиря",
+		description: "Скандинавия 1/2, Майами 1/2, Филадельфия, ролл со слабосоленым лососем, суши сяке 2шт, 2 соуса, 2 вассаби, 2 имбиря",
 		weight: "24шт, 610",
 		price: "749",
 		quantity: "1"
@@ -1051,7 +1049,7 @@ const store = {
 		name: "Набор №2",
 		type: "Наборы",
 		picture: "/sets/set-2.jpg",
-		decription: "Ролл со слабосоленым лососем, ролл с копченым лососем, ролл с угрем, ролл с креветкой, ролл с огурцом, ролл с авокадо, 2 соуса, 2 вассаби, 2 имбиря",
+		description: "Ролл со слабосоленым лососем, ролл с копченым лососем, ролл с угрем, ролл с креветкой, ролл с огурцом, ролл с авокадо, 2 соуса, 2 вассаби, 2 имбиря",
 		weight: "36шт, 600",
 		price: "499",
 		quantity: "1"
@@ -1060,7 +1058,7 @@ const store = {
 		name: "Набор № 3",
 		type: "Наборы",
 		picture: "/sets/set-3.jpg",
-		decription: "Дракон, калифорния, аляска, филадельфия, ролл с креветкой, грин ролл, кунсей капа, унаги темпура, якудза, 4 соуса, 4 васаби, 4 имбиря",
+		description: "Дракон, калифорния, аляска, филадельфия, ролл с креветкой, грин ролл, кунсей капа, унаги темпура, якудза, 4 соуса, 4 васаби, 4 имбиря",
 		weight: "70 шт, 1890",
 		price: "1899",
 		quantity: "1"
@@ -1069,7 +1067,7 @@ const store = {
 		name: "Набор Ассорти",
 		type: "Наборы",
 		picture: "/sets/assorti.jpg",
-		decription: "Ролл с креветкой, аляска, дракон, калифорния, 2 соуса, 2 васаби, 2 имбиря",
+		description: "Ролл с креветкой, аляска, дракон, калифорния, 2 соуса, 2 васаби, 2 имбиря",
 		weight: "30 шт, 760",
 		price: "899",
 		quantity: "1"
@@ -1078,7 +1076,7 @@ const store = {
 		name: "Набор Тортилья",
 		type: "Наборы",
 		picture: "/sets/torts.jpg",
-		decription: "Тортилья с угрём, тортилья с лососем, тортилья с говядиной, тортилья с беконом, тортилья с курицей, 3 соуса, 3 васаби, 3 имбиря",
+		description: "Тортилья с угрём, тортилья с лососем, тортилья с говядиной, тортилья с беконом, тортилья с курицей, 3 соуса, 3 васаби, 3 имбиря",
 		weight: "40 шт, 1170",
 		price: "1049",
 		quantity: "1"
@@ -1087,7 +1085,7 @@ const store = {
 		name: "Набор Дракон",
 		type: "Наборы",
 		picture: "/sets/dragon.jpg",
-		decription: "Филадельфия с огурцом, скандинавия, капа хосомаки, канада, ролл с огурцом, ролл с авокадо, ролл с тунцом, ролл с сёмгой, бостон, фудзияма, куцу, принт, майами, син унаги, горячая гейша, калифорния, нежный угорь 126 шт., 7 соусов, 7 васаби, 7 имбиря",
+		description: "Филадельфия с огурцом, скандинавия, капа хосомаки, канада, ролл с огурцом, ролл с авокадо, ролл с тунцом, ролл с сёмгой, бостон, фудзияма, куцу, принт, майами, син унаги, горячая гейша, калифорния, нежный угорь 126 шт., 7 соусов, 7 васаби, 7 имбиря",
 		weight: "126 шт, 3300",
 		price: "2999",
 		quantity: "1"
@@ -1096,7 +1094,7 @@ const store = {
 		name: "Набор Филадельфия",
 		type: "Наборы",
 		picture: "/sets/philadelfia.jpg",
-		decription: "Филадельфия, Филадельфия с огурцом, Филадельфия с луком, Гейша, 2 соуса, 2 вассаби, 2 имбиря",
+		description: "Филадельфия, Филадельфия с огурцом, Филадельфия с луком, Гейша, 2 соуса, 2 вассаби, 2 имбиря",
 		weight: "32 шт, 910",
 		price: "999",
 		quantity: "1"
@@ -1105,7 +1103,7 @@ const store = {
 		name: "Набор Гурман",
 		type: "Наборы",
 		picture: "/sets/gurman.jpg",
-		decription: "Ролл со слабосоленым лососем, ролл с копченым лососем, ролл с тунцом, ролл с креветкой, ролл с огурцом, Икура сомаки, Калифорния, Филадельфия с огурцом, Банито маки, 4 соуса, 4 вассаби, 4 имбиря",
+		description: "Ролл со слабосоленым лососем, ролл с копченым лососем, ролл с тунцом, ролл с креветкой, ролл с огурцом, Икура сомаки, Калифорния, Филадельфия с огурцом, Банито маки, 4 соуса, 4 вассаби, 4 имбиря",
 		weight: "62 шт, 1400",
 		price: "1399",
 		quantity: "1"
@@ -1114,7 +1112,7 @@ const store = {
 		name: "Набор Фудзи",
 		type: "Наборы",
 		picture: "/sets/fudsi.jpg",
-		decription: "Гейша 1/2, Планета 1/2, Филадельфия с огурцом 1/2, Филадельфия с креветкой 1/2, Канада, 2 соуса, 2 вассаби, 2 имбиря",
+		description: "Гейша 1/2, Планета 1/2, Филадельфия с огурцом 1/2, Филадельфия с креветкой 1/2, Канада, 2 соуса, 2 вассаби, 2 имбиря",
 		weight: "24шт, 700",
 		price: "749",
 		quantity: "1"
@@ -1123,7 +1121,7 @@ const store = {
 		name: "Набор Токио",
 		type: "Наборы",
 		picture: "/sets/tokio.jpg",
-		decription: "Филадельфия, Калифорния, Икура сомаки, Планета, Лава, 3 соуса, 3 вассаби, 3 имбиря",
+		description: "Филадельфия, Калифорния, Икура сомаки, Планета, Лава, 3 соуса, 3 вассаби, 3 имбиря",
 		weight: "40шт, 1120",
 		price: "1240",
 		quantity: "1"
@@ -1132,7 +1130,7 @@ const store = {
 		name: "Набор Оригами",
 		type: "Наборы",
 		picture: "/sets/origami.jpg",
-		decription: "Грин ролл 1/2, Сырный 1/2, Гейша 1/2, Планета 1/2, Филадельфия с огурцом 1/2, Филадельфия с креветкой 1/2, Унаги филадельфия, Тортилья с лососем, 3 соуса, 3 вассаби, 3 имбиря",
+		description: "Грин ролл 1/2, Сырный 1/2, Гейша 1/2, Планета 1/2, Филадельфия с огурцом 1/2, Филадельфия с креветкой 1/2, Унаги филадельфия, Тортилья с лососем, 3 соуса, 3 вассаби, 3 имбиря",
 		weight: "40 шт, 1150",
 		price: "1199",
 		quantity: "1"
@@ -1213,7 +1211,7 @@ const store = {
 		name: "Чизкейк в ассортименте",
 		type: "Десерты",
 		picture: "/deserts/cake.jpg",
-		decription: "Шоколадный, Клубничный, Классический",
+		description: "Шоколадный, Клубничный, Классический",
 		weight: "100",
 		price: "100",
 		quantity: "1"

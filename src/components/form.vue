@@ -5,6 +5,7 @@
             <h4 class="modal__header-title">Оформить заказ:</h4>
             <span class="modal__close">
                 <button
+					@click = "$emit('modalClose')"
                 	class="modal__close-button"
                 	ripple-dark
                 	>
@@ -121,6 +122,8 @@
 						$data.Form.phone = ''
 						$data.Form.address = ''
 						$data.Form.message = ''
+						setTimeout( $data.$emit('clearCart') , 500);
+						setTimeout( $data.$emit('modalClose') , 1500);
 					}, error => {
 						console.log(error);
 						$data.$swal(
@@ -151,6 +154,12 @@ $iconSize: 1.25rem;
 	background-color: $main-elm;
 	transform: translateX(-50%) translateY(-250%);
 	transition: 0.6s ease-in-out;
+	@include MQ(Pp) {
+        width: 100%;
+	}
+	@include MQ(Pl) {
+        width: 100%;
+	}
 	&.is-opened {
 		opacity: 1;
 		visibility: visible;
@@ -165,6 +174,14 @@ $iconSize: 1.25rem;
 		flex-flow: column wrap;
 		justify-content: center;
 		size: inherit $modalHeight;
+		@include MQ(Pp) {
+            text-align: left;
+            padding-left: 2vw;
+		}
+		@include MQ(Pl) {
+            text-align: left;
+            padding-left: 2vw;
+		}
 	}
 	&__body {
 		width: 100%;
