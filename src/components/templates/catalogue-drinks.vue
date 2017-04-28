@@ -1,10 +1,10 @@
 <template lang="html">
 	<li class="product" ripple-dark>
 		<h6 class="product__name">{{ name }}</h6>
-        <img
-            class="product__image"
-            :src=" '../../static/assets/img' + picture "
-            :alt=" type + ' ' + name ">
+		<img
+            v-lazy = " '../../static/assets/img' + picture "
+            :alt = " type + ' ' + name "
+			class="product__image" >
         <span class="product__description">{{ description }}</span>
         <span class="product__weight">{{ weight }} л.</span>
         <button @click=" toCart() " class="product__order">

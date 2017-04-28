@@ -73,7 +73,8 @@
 						>
 							<i class="cart__open-icon fa fa-check"
 								:class = "{ 'is-opened' : CartState.isOpened }"
-								aria-hidden="true"></i>
+								aria-hidden="true">
+							</i>
 					</button>
 				</transition>
 			</span>
@@ -101,104 +102,104 @@
 </template>
 
 <script>
-import TWEEN from 'tween.js';
 
-import cartItem from './templates/cartItem';
+	import TWEEN from 'tween.js';
+	import cartItem from './templates/cartItem';
 
-export default {
-	name: "cart",
-	props: [ 'added' ],
-	components: {
-		cartItem
-	},
-	data() {
-		return {
-			summUpper: '',
-			quantities: '',
-			suumms: '',
-			animatedSumms: '',
-			CartState: {
-				isFilled: false,
-				isOpened: false
+	export default {
+		name: "cart",
+		props: [ 'added' ],
+		components: {
+			cartItem
+		},
+		data() {
+			return {
+				summUpper: '',
+				quantities: '',
+				suumms: '',
+				animatedSumms: '',
+				CartState: {
+					isFilled: false,
+					isOpened: false
+				},
+				titles: {
+					openTitle: 'Открыть корзину',
+					closeTitle: 'Очистить корзину'
+				}
+			}
+		},
+		watch: {
+			added() {
+				let $data = this;
+				if ( $data.added.length == 0 ) {
+					$data.CartState.isFilled = false;
+					$data.CartState.isOpened = false
+				}
 			},
-			titles: {
-				openTitle: 'Открыть корзину',
-				closeTitle: 'Очистить корзину'
-			}
-		}
-	},
-	watch: {
-		added() {
-			let $data = this;
-			if ( $data.added.length == 0 ) {
-				$data.CartState.isFilled = false;
-				$data.CartState.isOpened = false
-			}
-		},
-		summUpper() {
-			let $data = this;
-			const summs = [];
-			const quantities = [];
-			for (let item of $data.added) {
-				summs.push(item.quantity * item.price)
-				quantities.push(item.quantity)
-			};
-			$data.suumms = summs.reduce((sum, n) => (sum += n), 0)
-			$data.quantities = quantities.reduce((sum, n) => (sum += n), 0)
-			if (this.quantities > 0) {
-				$data.CartState.isFilled = true
-			}
-		},
-		suumms(newValue, oldValue) {
-			let $data = this;
-			let animationFrame;
+			summUpper() {
+				let $data = this;
+				const summs = [];
+				const quantities = [];
+				for (let item of $data.added) {
+					summs.push(item.quantity * item.price)
+					quantities.push(item.quantity)
+				};
+				$data.suumms = summs.reduce((sum, n) => (sum += n), 0)
+				$data.quantities = quantities.reduce((sum, n) => (sum += n), 0)
+				if (this.quantities > 0) {
+					$data.CartState.isFilled = true
+				}
+			},
+			suumms(newValue, oldValue) {
+				let $data = this;
+				let animationFrame;
 
-			function animate(time) {
-				TWEEN.update(time);
-				animationFrame = requestAnimationFrame(animate)
-			};
-			new TWEEN.Tween({
-					tweeningNumber: oldValue
-				})
-				.easing(TWEEN.Easing.Linear.None)
-				.to({
-					tweeningNumber: newValue
-				}, 500)
-				.onUpdate(function() {
-					$data.animatedSumms = this.tweeningNumber.toFixed(0)
-				})
-				.onComplete(function() {
-					cancelAnimationFrame(animationFrame)
-				})
-				.start()
-			animationFrame = requestAnimationFrame(animate);
-		}
-	},
-	methods: {
-		decriment(item) {
-			if (item.quantity > 1) {
-				item.quantity -= 1
-			};
+				function animate(time) {
+					TWEEN.update(time);
+					animationFrame = requestAnimationFrame(animate)
+				};
+				new TWEEN.Tween({
+						tweeningNumber: oldValue
+					})
+					.easing(TWEEN.Easing.Linear.None)
+					.to({
+						tweeningNumber: newValue
+					}, 500)
+					.onUpdate(function() {
+						$data.animatedSumms = this.tweeningNumber.toFixed(0)
+					})
+					.onComplete(function() {
+						cancelAnimationFrame(animationFrame)
+					})
+					.start()
+				animationFrame = requestAnimationFrame(animate);
+			}
 		},
-		summUp(summ) {
-			this.summUpper = summ
-		},
-		clearCart() {
-			this.$emit('clearCart')
-		},
-		remove() {
-			let $data = this;
-			const summs = [];
-			const quantities = [];
-			for (let item of $data.added) {
-				summs.push(item.quantity * item.price)
-				quantities.push(item.quantity)
-			};
-			$data.suumms = summs.reduce((sum, n) => (sum += n), 0)
-			$data.quantities = quantities.reduce((sum, n) => (sum += n), 0)
+		methods: {
+			decriment(item) {
+				if (item.quantity > 1) {
+					item.quantity -= 1
+				};
+			},
+			summUp(summ) {
+				this.summUpper = summ
+			},
+			clearCart() {
+				this.$emit('clearCart')
+			},
+			remove() {
+				let $data = this;
+				const summs = [];
+				const quantities = [];
+				for (let item of $data.added) {
+					summs.push(item.quantity * item.price)
+					quantities.push(item.quantity)
+				};
+				$data.suumms = summs.reduce((sum, n) => (sum += n), 0)
+				$data.quantities = quantities.reduce((sum, n) => (sum += n), 0)
+			}
 		}
 	}
-}
 
 </script>
 
@@ -319,11 +320,10 @@ $iconSize: 1.25rem;
         }
     }
     &__open-button.is-opened {
-        background-color: $main-elm;
         cursor: auto;
 		outline: none;
         &:hover {
-            background-color: $main-elm;
+            background-color: transparent
         }
     }
     &__open-icon {

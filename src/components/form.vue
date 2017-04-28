@@ -87,8 +87,10 @@
 <script>
 
 	import MaskedInput from 'vue-masked-input';
+	import telegram from '../data.js';
 
 	export default {
+		props: [ 'added' ],
   		name: "form",
       	data() {
 			return {
@@ -96,7 +98,7 @@
 					name: '',
 					phone: '',
 					address: '',
-					message: '',
+					message: ''
 				},
 				nameHold: 'Введите имя',
 				phoneHold: 'Введите телефон',
@@ -110,7 +112,13 @@
 		methods: {
 			sendOrder() {
 				let $data = this;
-				$data.$http.post(`sushi.json`, $data.Form)
+				let message = `Новый заказ на сайте:\n\nИмя: ${this.Form.name}\nТелефон: ${this.Form.phone}\nАдрес: ${this.Form.address}\n\nЗаказ:\n${this.added}`;
+				let request = {
+					token: telegram.token,
+					chat_id: '173161597',
+					text: message
+				};
+				this.$http.post(`https://api.telegram.org/bot${request.token}/sendMessage?chat_id=${request.chat_id}&text=${request.text}`)
 					.then(response => {
 						console.log(response);
 						$data.$swal(

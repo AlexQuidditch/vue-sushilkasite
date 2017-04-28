@@ -31,18 +31,10 @@
 					little: 'В праздники можем немного припоздниться :)'
 				},
 				Slides: [
-					{
-						img: '../../static/assets/img/slider/slide1.jpg'
-					},
-					{
-						img: '../../static/assets/img/slider/slide2.jpg'
-					},
-					{
-						img: '../../static/assets/img/slider/slide3.jpg'
-					},
-					{
-						img: '../../static/assets/img/slider/slide4.jpg'
-					}
+					{ img: '../../static/assets/img/slider/slide1.jpg' },
+					{ img: '../../static/assets/img/slider/slide2.jpg' },
+					{ img: '../../static/assets/img/slider/slide3.jpg' },
+					{ img: '../../static/assets/img/slider/slide4.jpg' }
 				],
 				flickityOptions: {
 	                prevNextButtons: false,
