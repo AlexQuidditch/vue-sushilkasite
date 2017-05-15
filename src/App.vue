@@ -1,14 +1,14 @@
 <template lang="html">
 	<div id="wrapper" class="wrapper">
 		<cart :added = "added"
+			:operationsCounter = "operationsCounter"
+			@changeCounter = "changeCounter()"
 			@clearCart = "clearCart()"
 			@modalOpen = "modalOpen()">
 		</cart>
 		<s-menu></s-menu>
 		<s-header></s-header>
-		<catalogue
-			@addToCart = "pushToCart($event)">
-		</catalogue>
+		<catalogue @addToCart = "pushToCart($event)"></catalogue>
 		<s-footer></s-footer>
 		<modal :added = "added"
 			:class = " { 'is-opened' : modalState } "
@@ -29,24 +29,21 @@
 
 	export default {
 		name: 'app',
-		components: {
-			Cart,
-			Catalogue,
-			Modal,
-			sHeader,
-			sFooter,
-			sMenu
-		},
+		components: { Cart , Catalogue , Modal , sHeader , sFooter , sMenu },
 		data() {
 			return {
 				added: [],
-				modalState: false
+				modalState: false,
+				operationsCounter: 0
 			}
 		},
 		methods: {
+			changeCounter() {
+				this.operationsCounter += 1
+			},
 			pushToCart(product) {
 				let found = false;
-				let $data = this;
+				const $data = this;
 				for (let i in $data.added) {
 					if ($data.added[i].id === product.id) {
 						let newProduct = $data.added[i];
@@ -58,10 +55,12 @@
 				if (!found) {
 					product.quantity = 1;
 					$data.added.push(product);
+					this.changeCounter();
 				}
 			},
 			clearCart() {
-				this.added = []
+				this.added = [];
+				this.changeCounter();
 			},
 			modalOpen() {
 				this.modalState = true
@@ -87,8 +86,7 @@
 	@import "./scss/layout/fonts";
 	@import "./scss/layout/resets";
 	@import "./scss/libs/burger";
-	body,
-	html {
+	body , html {
 		size: 100%;
 	}
 
@@ -122,7 +120,9 @@
 
 	@include waves-light( $main-elm, $ripple-opacity);
 	@include waves-dark( $second-elm, $ripple-opacity);
+
 	svg:not(:root) {
 		overflow: visible;
 	}
+
 </style>

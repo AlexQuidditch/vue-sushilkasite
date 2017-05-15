@@ -1,6 +1,6 @@
 <template lang="html">
 	<main id="main" class="main">
-		<information></information>
+		<s-information></s-information>
 		<section id="rolls" class="rolls">
 			<h2 class="section-title">Роллы:</h2>
 			<ul class="container_flex-row">
@@ -14,7 +14,8 @@
 					:weight = "rollItem.weight"
 					:price = "rollItem.price"
 					@addToCart = "toCart($event)"
-				></catalogue-Item>
+					>
+				</catalogue-Item>
 			</ul>
 		</section>
 		<section id="baked" class="baked">
@@ -30,7 +31,8 @@
 					:weight = "bakedItem.weight"
 					:price = "bakedItem.price"
 					@addToCart = "toCart($event)"
-				></catalogue-Item>
+					>
+				</catalogue-Item>
 			</ul>
 		</section>
 		<section id="tempurarolls" class="tempurarolls">
@@ -46,7 +48,8 @@
 					:weight = "tempurarollsItem.weight"
 					:price = "tempurarollsItem.price"
 					@addToCart = "toCart($event)"
-				></catalogue-Item>
+					>
+				</catalogue-Item>
 			</ul>
 		</section>
 		<section id="tempura" class="tempura">
@@ -62,7 +65,8 @@
 					:weight = "tempuraItem.weight"
 					:price = "tempuraItem.price"
 					@addToCart = "toCart($event)"
-				></catalogue-Item>
+					>
+				</catalogue-Item>
 			</ul>
 		</section>
 		<section id="torts" class="torts">
@@ -78,7 +82,8 @@
 					:weight = "tortsItem.weight"
 					:price = "tortsItem.price"
 					@addToCart = "toCart($event)"
-				></catalogue-Item>
+					>
+				</catalogue-Item>
 			</ul>
 		</section>
 		<section id="omlet" class="omlet">
@@ -94,7 +99,8 @@
 					:weight = "omlettem.weight"
 					:price = "omlettem.price"
 					@addToCart = "toCart($event)"
-				></catalogue-Item>
+					>
+				</catalogue-Item>
 			</ul>
 		</section>
 		<section id="sushi" class="sushi">
@@ -110,7 +116,8 @@
 					:weight = "sushitem.weight"
 					:price = "sushitem.price"
 					@addToCart = "toCart($event)"
-				></catalogue-Item>
+					>
+				</catalogue-Item>
 			</ul>
 		</section>
 		<section id="salats" class="salats">
@@ -126,7 +133,8 @@
 					:weight = "salatsItem.weight"
 					:price = "salatsItem.price"
 					@addToCart = "toCart($event)"
-				></catalogue-Item>
+					>
+				</catalogue-Item>
 			</ul>
 		</section>
 		<section id="rice" class="rice">
@@ -142,7 +150,8 @@
 					:weight = "ricetem.weight"
 					:price = "ricetem.price"
 					@addToCart = "toCart($event)"
-				></catalogue-Item>
+					>
+				</catalogue-Item>
 			</ul>
 		</section>
 		<section id="sets" class="sets">
@@ -158,7 +167,8 @@
 					:weight = "setstem.weight"
 					:price = "setstem.price"
 					@addToCart = "toCart($event)"
-				></catalogue-Item>
+					>
+				</catalogue-Item>
 			</ul>
 		</section>
 		<section id="sauces" class="sauces">
@@ -173,7 +183,8 @@
 					:description = "saucestem.description"
 					:price = "saucestem.price"
 					@addToCart = "toCart($event)"
-				></sauce-Item>
+					>
+				</sauce-Item>
 			</ul>
 		</section>
 		<section id="deserts" class="deserts">
@@ -189,7 +200,8 @@
 					:weight = "desertstem.weight"
 					:price = "desertstem.price"
 					@addToCart = "toCart($event)"
-				></catalogue-Item>
+					>
+				</catalogue-Item>
 			</ul>
 		</section>
 		<section id="drinks" class="drinks">
@@ -205,7 +217,8 @@
 					:weight = "drinkstem.weight"
 					:price = "drinkstem.price"
 					@addToCart = "toCart($event)"
-				></drinks-Item>
+					>
+				</drinks-Item>
 			</ul>
 		</section>
 	</main>
@@ -213,38 +226,34 @@
 
 <script>
 
-	import Information from './information';
+	import sInformation from './information';
 	import catalogueItem from './templates/catalogueItem';
 	import drinksItem from './templates/catalogue-drinks';
 	import sauceItem from './templates/catalogue-sauce';
 
 	export default {
   		name: "catalogue",
-		components: {
-			Information,
-			catalogueItem,
-			drinksItem,
-			sauceItem
-		},
+		components: { sInformation , catalogueItem , drinksItem , sauceItem },
 		data() {
 			return {
 				Store: []
 			}
 		},
 		beforeCreate() {
-			let $data = this;
+			const $data = this;
 			this.$http.get('store.json')
-				.then(response => {
+				.then( response => {
 					return response.json();
-				}, error => {
+				})
+				.then( data => {
+					$data.Store = data;
+				})
+				.catch( error => {
 					$data.$swal(
 						'Хм...',
 						'Не могу получить каталог. Перезагрузите страницу.',
 						'error'
 					)
-				})
-				.then(data => {
-					$data.Store = data;
 				});
 		},
 		methods: {
@@ -256,26 +265,24 @@
 </script>
 
 <style lang="scss">
-@import '../scss/partials/_layout';
-@import '../scss/partials/_mixins';
-@import '../scss/partials/_variables';
+	@import '../scss/partials/_layout';
+	@import '../scss/partials/_mixins';
+	@import '../scss/partials/_variables';
 
-.catalogue {
-	padding-top: 10px;
-	margin: auto;
-}
-
-.section-title {
-	text-align: center;
-	width: 100%;
-	font-size: 3em;
-	line-height: 10rem;
-	@include MQ(Pp) {
-        font-size: 2.5rem;
+	.catalogue {
+		padding-top: 10px;
+		margin: auto;
 	}
-	@include MQ(Pl) {
-        font-size: 2.5rem;
+	.section-title {
+		text-align: center;
+		width: 100%;
+		font-size: 3em;
+		line-height: 10rem;
+		@include MQ(Pp) {
+	        font-size: 2.5rem;
+		}
+		@include MQ(Pl) {
+	        font-size: 2.5rem;
+		}
 	}
-}
-
 </style>

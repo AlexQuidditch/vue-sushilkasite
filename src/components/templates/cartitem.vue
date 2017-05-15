@@ -3,31 +3,23 @@
 		<span class = "cart-item__name">{{ name }}</span>
 		<span class = "cart-item__price">{{ price }}</span>
 		<span class = "cart-item__quantity">
-			<button
-				@click="$emit('decriment')"
+			<button	@click = "$emit('decriment')"
 				class = "cart-item__decriment"
-				type="button"
-				name="button"
-				ripple-dark
+				type="button" name="button"
 				>
 				<i class="cart-item__icon fa fa-minus" aria-hidden="true"></i>
 			</button>
 			{{ quantity }}
-			<button
-				@click="$emit('incriment')"
+			<button	@click = "$emit('incriment')"
 				class = "cart-item__increment"
-				type="button"
-				name="button"
-				ripple-dark
+				type="button" name="button"
 				>
 				<i class="cart-item__icon fa fa-plus" aria-hidden="true"></i>
 			</button>
 		</span>
 		<span class = "cart-item__summ">{{ summ = quantity * price }}</span>
-		<button
-			@click="$emit('remove')"
+		<button	@click="$emit('remove')"
 			class = "cart-item__remove"
-			ripple-dark
 			>
 			<i class="cart-item__icon fa fa-times" aria-hidden="true"></i>
 		</button>
@@ -53,7 +45,6 @@ export default {
 		this.$emit('summUp', this.summ );
 		Waves.init();
 		Waves.attach('[ripple-dark]', ['waves-dark']);
-		Waves.attach('[ripple-light]', ['waves-light']);
 	},
 	watch: {
 		summ() {
