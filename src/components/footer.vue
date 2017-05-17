@@ -7,15 +7,11 @@
 				<span class="social__text">{{ social.name }}</span>
 				<ul class="social__list">
 					<li v-for="contentItem in social.content" class="social__item">
-						<a
-							:href="contentItem.link"
+						<a :href="contentItem.link"
 							class="social__link"
+							target="_blank"
 							ripple-light
-							>
-							<i :class=" 'fa fa-' + contentItem.icon "
-								aria-hidden="true"
-								>
-							</i>
+							><i :class=" 'fa fa-' + contentItem.icon "aria-hidden="true"></i>
 						</a>
 					</li>
 				</ul>
@@ -34,31 +30,37 @@
 				<div class="requisites__column">
 					<span class="requisites__name">{{ official.name }}</span>
 					<ul class="requisites__list">
-						<li v-for="contentItem in official.content" class="requisites__item">{{ contentItem }}</li>
+						<li v-for="contentItem in official.content"
+							class="requisites__item"
+							>{{ contentItem }}</li>
 					</ul>
 				</div>
 
 				<div class="requisites__column">
 					<span class="requisites__name">{{ address.name }}</span>
 					<ul class="requisites__list">
-						<li v-for="contentItem in address.content" class="requisites__item">{{ contentItem }}</li>
+						<li v-for="contentItem in address.content"
+							class="requisites__item"
+							>{{ contentItem }}</li>
 					</ul>
 				</div>
 
 				<div class="requisites__column">
 					<span class="requisites__name">{{ phones.name }}</span>
 					<ul class="requisites__list">
-						<li v-for="contentItem in phones.content" class="requisites__item">{{ contentItem }}</li>
+						<li v-for="contentItem in phones.content"
+							class="requisites__item"
+							>{{ contentItem }}</li>
 					</ul>
 				</div>
 
 				<div class="requisites__column">
 					<span class="requisites__name">{{ mail.name }}</span>
 					<ul class="requisites__list">
-						<li v-for="contentItem in mail.content" class="requisites__item">
-							<a
+						<li v-for="contentItem in mail.content"
+							class="requisites__item">
+							<a :href=" 'mailto:' + contentItem.text"
 								class="requisites__mail"
-								:href=" 'mailto:' + contentItem.text"
 								:title="contentItem.title"
 								>{{ contentItem.text }}</a>
 						</li>
@@ -67,6 +69,12 @@
 
 			</div>
 
+		</div>
+
+		<div class="webeor">
+			<a href="//AlexQuidditch.github.io" target="_blank" class="webeor__link">
+				<img src="../../static/assets/svg/logo.svg" alt="WebeOR" class="webeor__logo" />
+			</a>
 		</div>
 
 	</footer>
@@ -82,7 +90,7 @@
 					content: [
 						{
 							icon: 'vk',
-							link: '//суши-ачинск.рф'
+							link: '//vk.com/sushiachinsk'
 						}
 					]
 				},
@@ -135,16 +143,16 @@
 		max-width: 1180px;
 		margin: auto;
 		padding: 5vh 1vh;
+		padding-bottom: 0;
 		background-color: #efdecd;
 		@include MDShadow-1;
-	}
-
-	.footer .container_flex-row {
-		padding: 30px;
-		background-color: $main-elm;
-		@include MDShadow-1;
 		@include MQ(Pp) {
-    	    margin-bottom: 5rem;
+			padding-bottom: 100px;
+		}
+		.container_flex-row {
+			padding: 30px;
+			background-color: $main-elm;
+			@include MDShadow-1;
 		}
 	}
 
@@ -168,13 +176,13 @@
 	            display: block;
 	            text-align: center;
 	            font-size: 1.5rem;
-	            line-height: 3rem;
+	            line-height: 2;
 			}
 			@include MQ(Pl) {
 	            display: block;
 	            text-align: center;
 	            font-size: 1.5rem;
-	            line-height: 3rem;
+	            line-height: 2;
 			}
 		}
 		&__list {
@@ -251,6 +259,12 @@
 				width: 100%;
 	            font-size: 1.3rem;
 			}
+			@include MQ(Tp) {
+				width: 100%;
+			}
+			@include MQ(Tl) {
+				width: 100%;
+			}
 		}
 	}
 
@@ -276,6 +290,21 @@
 		&__name {
 			font-size: 1.2rem;
 			line-height: 1.5em;
+		}
+	}
+
+	.webeor {
+		display: flex;
+		justify-content: flex-end;
+		width: 100%;
+		padding: 10px 60px;
+		margin: 0 auto;
+		@include MQ(Pp) {
+			justify-content: center;
+			padding-top: 20px;
+		}
+		&__logo {
+			height: 35px;
 		}
 	}
 </style>

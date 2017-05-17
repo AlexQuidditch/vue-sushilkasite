@@ -283,8 +283,8 @@
 	    &__close,
 	    &__open {
 	        display: flex;
+			flex-flow: column wrap;
 	        justify-content: center;
-	        flex-flow: column wrap;
 	        size: 20% $cartHeight;
 	        padding: 0;
 	    }

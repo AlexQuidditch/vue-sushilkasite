@@ -4,8 +4,7 @@
         <div class="modal__header">
             <h4 class="modal__header-title">Оформить заказ:</h4>
             <span class="modal__close">
-                <button
-					@click = "$emit('modalClose')"
+                <button @click = "$emit('modalClose')"
                 	class="modal__close-button"
                 	ripple-dark
                 	>
@@ -122,7 +121,7 @@
 <script>
 
 	import MaskedInput from 'vue-masked-input';
-	import telegram from '../data.js';
+	import { token , chat_id } from '../data.js';
 
 	export default {
 		name: "form",
@@ -147,21 +146,21 @@
 			sendOrder() {
 				const $data = this;
 				let message =
-`Новый заказ на сайте:
+`
+Новый заказ на сайте:
 
 Имя: ${ this.Form.name }
 Телефон: ${ this.Form.phone }
 Адрес: ${ this.Form.address }
 Заказ:
 
-${ this.parseAdded(this.added) }
+${ this.parse(this.added) }
 
 Скидка: ${ this.calcDiscount(this.Form.discount) }%
 Всего: ${ this.results() }
 `;
 				let request = {
-					token: telegram.token,
-					chat_id: '173161597',
+					token ,	chat_id,
 					text: message
 				};
 				this.$http.post(`https://api.telegram.org/bot${request.token}/sendMessage?chat_id=${request.chat_id}&text=${request.text}`)
@@ -190,7 +189,7 @@ ${ this.parseAdded(this.added) }
 						);
 					})
 			},
-			parseAdded(arr) {
+			parse(arr) {
 				let processed = [];
 				for ( let item of arr ) {
 					processed.push(`${item.name}: ${item.price} р. *  ${item.quantity} шт. = ${item.price * item.quantity} р.`);
@@ -204,7 +203,7 @@ ${ this.parseAdded(this.added) }
 			results() {
 				let summs = [];
 				let quantities = [];
-				for (let item of this.added) {
+				for ( let item of this.added ) {
 					summs.push(item.quantity * item.price)
 					quantities.push(item.quantity)
 				};
@@ -334,11 +333,16 @@ ${ this.parseAdded(this.added) }
 			width: 15%;
 			font-size: 2rem;
 			color: $main-elm;
+			text-shadow:
+		            0 4px 5px rgba($blacked, 0.14),
+		            0 1px 10px rgba($blacked, 0.12),
+					0 2px 4px rgba($blacked, 0.3);
 		}
 		&__input {
 			size: 85% 2.5rem;
 			padding: 10px;
 			border: none;
+			@include MDShadow-1;
 			&::placeholder {
 				text-overflow: ellipsis;
 				color: gray;
@@ -357,7 +361,8 @@ ${ this.parseAdded(this.added) }
 			padding: 10px;
 			border: none;
 			resize: none;
-			transition: 0.3s ease-in-out
+			transition: 0.3s ease-in-out;
+			@include MDShadow-1;
 		}
 		&__label-container {
 			display: flex;
@@ -409,6 +414,7 @@ ${ this.parseAdded(this.added) }
 				align-items: center;
 				width: 100%;
 				color: $main-elm $second-elm;
+				cursor: pointer;
 				transition: background-color .2s ease-in-out,
 					color .2s ease-in-out
 			}
