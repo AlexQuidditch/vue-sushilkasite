@@ -7,9 +7,6 @@
 				<h6 class="header__sub-text">{{ Titles.little }}</h6>
             </div>
         </div>
-		<div class="slider">
-			<img src="../../static/assets/img/slider/slide1.jpg" class="slider__slide" alt="слайд" />
-		</div>
 	</header>
 </template>
 
@@ -23,11 +20,6 @@
 					main: 'Вкуснейшие роллы и суши\nс доставкой на дом!',
 					sub: 'Закажите через сайт - мы приготовим и доставим за 60 минут!',
 					little: 'В праздники можем немного припоздниться :)'
-				},
-				flickityOptions: {
-	                prevNextButtons: false,
-    	            pageDots: false,
-        	        wrapAround: true
 				}
 			}
       	}
@@ -47,6 +39,9 @@
 		flex-direction: column;
 		z-index: -1;
 		size: 100% 100vh;
+		background-image: url('../../static/assets/img/slider/slide1.jpg');
+		background-position: center;
+		background-size: cover;
 	    &__title-container {
 		    display: flex;
 		    flex-flow: column wrap;
@@ -91,16 +86,5 @@
 	        color: $main-elm
 	    }
 	}
-
-	.slider {
-	    position: absolute 0 auto auto 0;
-		size: 100%;
-		&__slide {
-			size: 100%;
-	        object-fit: cover;
-	        object-position: center;
-		}
-	}
-
 
 </style>
