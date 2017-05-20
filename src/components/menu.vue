@@ -14,8 +14,7 @@
 				style="border-radius: 100%"
 				>
 				<li class="sidebar__item _clear"></li>
-				<li
-					v-for = "menuItem in Menu" :key = "menuItem.key"
+				<li v-for = "menuItem in Menu" :key = "menuItem.key"
 					@click = "scrollTo(menuItem.anchor)"
 					class="sidebar__item"
 					ripple-dark
@@ -143,6 +142,7 @@
 			},
 			scrollTo(el) {
 				document.getElementById(el).scrollIntoView({ behavior: 'smooth' });
+				this.menuClick();
 			}
 		}
 	}
