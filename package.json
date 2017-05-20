@@ -1,6 +1,6 @@
 {
   "name": "vue-sushilka-site",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "A Vue.js project",
   "author": "AlexQuidditch <alexquidditch@gmail.com>",
   "private": true,
@@ -29,6 +29,7 @@
     "babel-register": "^6.22.0",
     "chalk": "^1.1.3",
     "connect-history-api-fallback": "^1.3.0",
+	"compression-webpack-plugin": "^0.4.0",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.0",
     "eventsource-polyfill": "^0.9.6",
