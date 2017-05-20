@@ -18,8 +18,7 @@
 			</div>
 
 			<div class="feedback">
-				<a
-					:href="feedback.link"
+				<a :href="feedback.link"
 					class="feedback__button"
 					ripple-light
 					><i class="fa fa-envelope-o" aria-hidden="true"></i> &nbsp;{{ feedback.text }}</a>
