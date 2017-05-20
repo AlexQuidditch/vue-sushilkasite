@@ -3,7 +3,7 @@
 > This is  [sushilkaSite](https://github.com/AlexQuidditch/sushilkaSite) rebuilded with Vue.js
 
 ### Global dependencies:
-- Yarn / NPM
+- Yarn
 - Node JS
 
 ### Commands:
