@@ -152,6 +152,8 @@
 Имя: ${ this.Form.name }
 Телефон: ${ this.Form.phone }
 Адрес: ${ this.Form.address }
+Примечание: ${ this.Form.message }
+
 Заказ:
 
 ${ this.parse(this.added) }
@@ -160,7 +162,8 @@ ${ this.parse(this.added) }
 Всего: ${ this.results() }
 `;
 				let request = {
-					token ,	chat_id,
+					token,
+					chat_id,
 					text: message
 				};
 				this.$http.post(`https://api.telegram.org/bot${request.token}/sendMessage?chat_id=${request.chat_id}&text=${request.text}`)
@@ -192,7 +195,7 @@ ${ this.parse(this.added) }
 			parse(arr) {
 				let processed = [];
 				for ( let item of arr ) {
-					processed.push(`${item.name}: ${item.price} р. *  ${item.quantity} шт. = ${item.price * item.quantity} р.`);
+					processed.push(`${ item.name }: ${ item.price } р. *  ${ item.quantity } шт. = ${ item.price * item.quantity } р.`);
 				};
 				let parsed = processed.toString().split( ',' ).join(`\n`);
 				return parsed
