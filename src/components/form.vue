@@ -212,7 +212,7 @@ ${ this.parse(this.added) }
 				};
 				summs = summs.reduce((sum, n) => (sum += n), 0);
 				quantities = quantities.reduce((sum, n) => (sum += n), 0);
-				return `${ quantities } товаров на сумму ${ summs * this.Form.discount } р.`;
+				return `${ quantities } товаров на сумму ${ Math.round( summs * this.Form.discount ) } р.`;
 			}
 		}
 	}
