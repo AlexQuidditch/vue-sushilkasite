@@ -1,121 +1,106 @@
+
 <template lang="html">
 	<div id="modal" class="modal">
 
-        <div class="modal__header">
-            <h4 class="modal__header-title">Оформить заказ:</h4>
-            <span class="modal__close">
-                <button @click = "$emit('modalClose')"
-                	class="modal__close-button"
-                	ripple-dark
-                	>
-                    <i class="fa fa-times" aria-hidden="true"></i>
-                </button>
-            </span>
-        </div>
+		<div class="modal__header">
+			<h4 class="modal__header-title">Оформить заказ:</h4>
+			<span class="modal__close">
+				<button @click = "$emit('modalClose')"
+								class="modal__close-button"
+								ripple-dark>
+					<i class="fa fa-times" aria-hidden="true"></i>
+				</button>
+			</span>
+		</div>
 
-        <div class="modal__body">
+		<div class="modal__body">
 
-            <form class="form" @submit.prevent="sendOrder()">
+			<form class="form" @submit.prevent="sendOrder()">
 
-                <label for="name" class="form__row">
-                    <i class="form__icon fa fa-fw fa-user-circle" aria-hidden="true"></i>
-                    <input v-model="Form.name"
-						:placeholder="nameHold"
-						type="text"
-						id="name"
-						class="form__input"
-						pattern="[a-zA-Zа-яА-Я]{4,}"
-						required
-					/>
-                </label>
+				<label for="name" class="form__row">
+					<i class="form__icon fa fa-fw fa-user-circle" aria-hidden="true"></i>
+					<input v-model="Form.name"
+								:placeholder="nameHold"
+								type="text"
+								id="name"
+								class="form__input"
+								pattern="[a-zA-Zа-яА-Я]{4,}"
+								required />
+				</label>
 
-                <label for="phone" class="form__row">
-                    <i class="form__icon fa fa-fw fa-phone" aria-hidden="true"></i>
+				<label for="phone" class="form__row">
+					<i class="form__icon fa fa-fw fa-phone" aria-hidden="true"></i>
 					<masked-input v-model="Form.phone"
-						:placeholder="phoneHold"
-						mask="\+\7(911)111-11-11"
-						id="phone"
-						type="tel"
-						class="form__input"
-						required
-					/>
-                </label>
+												:placeholder="phoneHold"
+												mask="\+\7(911)111-11-11"
+												id="phone"
+												type="tel"
+												class="form__input"
+												required />
+				</label>
 
-                <label for="address" class="form__row">
-                    <i class="form__icon fa fa-fw fa-home" aria-hidden="true"></i>
+				<label for="address" class="form__row">
+					<i class="form__icon fa fa-fw fa-home" aria-hidden="true"></i>
 					<input v-model="Form.address"
-						:placeholder="addressHold"
-						type="text"
-						id="address"
-						class="form__input"
-						required
-					/>
-                </label>
+								:placeholder="addressHold"
+								type="text"
+								id="address"
+								class="form__input"
+								required />
+				</label>
 
-                <label for="message" class="form__row">
-                    <i class="form__icon fa fa-fw fa-pencil" aria-hidden="true"></i>
-                    <textarea v-model="Form.message"
-						:placeholder="messageHold"
-						id="message"
-						class="form__textarea"
-						placeholder="Примечания к заказу"
-						>
+				<label for="message" class="form__row">
+					<i class="form__icon fa fa-fw fa-pencil" aria-hidden="true"></i>
+					<textarea v-model="Form.message"
+										:placeholder="messageHold"
+										id="message"
+										class="form__textarea"
+										placeholder="Примечания к заказу">
 					</textarea>
-                </label>
+				</label>
 
-                <div class="checkboxes form__row _column">
+				<div class="checkboxes form__row _column">
 					<h5 class="checkboxes__title">У вас есть скидка?</h5>
 					<div class="checkboxes__container form__row _checkbox">
 
 						<div class="checkboxes__row">
 							<input class="checkboxes__input magic-radio"
-								v-model="Form.discount"
-								type="radio"
-								name="radio"
-								id="1"
-								value="1"
-								checked
-							/>
+										 v-model="Form.discount"
+										 type="radio" name="radio"
+										 id="1" value="1"
+										 checked />
 							<label for="1" class="checkboxes__label">Нет</label>
 						</div>
-
 						<div class="checkboxes__row">
 							<input class="checkboxes__input magic-radio"
-								v-model="Form.discount"
-								type="radio"
-								name="radio"
-								id="2"
-								value="0.95"
-							/>
+				 						 v-model="Form.discount"
+										 type="radio" name="radio"
+										 id="2" value="0.95" />
 							<label for="2" class="checkboxes__label">Есть карта скидок</label>
 						</div>
-
 						<div class="checkboxes__row">
 							<input class="checkboxes__input magic-radio"
-								v-model="Form.discount"
-								type="radio"
-								name="radio"
-								id="3"
-								value="0.85"
-							/>
+										 v-model="Form.discount"
+										 type="radio" name="radio"
+										 id="3" value="0.85" />
 							<label for="3" class="checkboxes__label">У меня день рождения!</label>
 						</div>
+
 					</div>
-                </div>
+				</div>
 
-		        <div class="modal__footer">
-		            <button	class="modal__send"
-						ripple-dark
-						><i class="modal__icon fa fa-fw fa-paper-plane" aria-hidden="true"></i>&nbsp;&nbsp;
-						Отправить заказ
+				<div class="modal__footer">
+					<button	class="modal__send"
+									ripple-dark>
+									<i class="modal__icon fa fa-fw fa-paper-plane" aria-hidden="true"></i>&nbsp;&nbsp;
+									Отправить заказ
 					</button>
-				 </div>
+				</div>
 
-            </form>
+			</form>
+		</div>
+	</div>
 
-        </div>
-
-    </div>
 </template>
 
 <script>
@@ -127,7 +112,7 @@
 		name: "form",
 		props: [ 'added' ],
 		components: { MaskedInput },
-      	data() {
+		data() {
 			return {
 				Form: {
 					name: '',
@@ -141,56 +126,51 @@
 				addressHold: 'Адрес или самовывоз',
 				messageHold: 'Примечание к заказу',
 			}
-      	},
+		},
 		methods: {
 			sendOrder() {
-				const $data = this;
-				let message =
-`
-Новый заказ на сайте:
+				const message =
+	`
+	Новый заказ на сайте:
 
-Имя: ${ this.Form.name }
-Телефон: ${ this.Form.phone }
-Адрес: ${ this.Form.address }
-Примечание: ${ this.Form.message }
+	Имя: ${ this.Form.name }
+	Телефон: ${ this.Form.phone }
+	Адрес: ${ this.Form.address }
+	Примечание: ${ this.Form.message }
 
-Заказ:
+	Заказ:
 
-${ this.parse(this.added) }
+	${ this.parse(this.added) }
 
-Скидка: ${ this.calcDiscount(this.Form.discount) }%
-Всего: ${ this.results() }
-`;
-				let request = {
+	Скидка: ${ this.calcDiscount(this.Form.discount) }%
+	Всего: ${ this.results() }
+	`;
+				const request = {
 					token,
 					chat_id,
 					text: message
 				};
-				this.$http.post(`https://api.telegram.org/bot${request.token}/sendMessage?chat_id=${request.chat_id}&text=${request.text}`)
-					.then( response => {
-						$data.$swal(
-							'Ура!',
-							'Заказ успешно отправлен.',
-							'success'
-						);
-						$data.Form = {
-							name: '',
-							phone: '',
-							address: '',
-							message: '',
-							discount: 1
-						};
-						setTimeout( $data.$emit('clearCart') , 500);
-						setTimeout( $data.$emit('modalClose') , 2500);
-					})
-					.catch( error => {
-						console.log(error);
-						$data.$swal(
-							'Ой!',
-							'Что-то пошло не так. Попробуйте ещё раз, или свяжитесь с менеджером',
-							'error'
-						);
-					})
+				this.$http.post(`https://api.telegram.org/bot${ request.token }/sendMessage?chat_id=${ request.chat_id }&text=${ request.text }`)
+				.then( response => {
+					this.$swal( 'Ура!' ,	'Заказ успешно отправлен.', 'success' );
+					this.Form = {
+						name: '',
+						phone: '',
+						address: '',
+						message: '',
+						discount: 1
+					};
+					setTimeout( this.$emit('clearCart') , 500);
+					setTimeout( this.$emit('modalClose') , 2500);
+				})
+				.catch( error => {
+					console.log(error);
+					this.$swal(
+					'Ой!',
+					'Что-то пошло не так. Попробуйте ещё раз, или свяжитесь с менеджером',
+					'error'
+					);
+				})
 			},
 			parse(arr) {
 				let processed = [];
@@ -236,10 +216,10 @@ ${ this.parse(this.added) }
 		transform: translateX(-50%) translateY(-250%);
 		transition: 0.6s ease-in-out;
 		@include MQ(Pp) {
-	        width: 100%;
+			width: 100%;
 		}
 		@include MQ(Pl) {
-	        width: 100%;
+			width: 100%;
 		}
 		&.is-opened {
 			opacity: 1;
@@ -256,12 +236,12 @@ ${ this.parse(this.added) }
 			justify-content: center;
 			size: inherit $modalHeight;
 			@include MQ(Pp) {
-	            text-align: left;
-	            padding-left: 2vw;
+				text-align: left;
+				padding-left: 2vw;
 			}
 			@include MQ(Pl) {
-	            text-align: left;
-	            padding-left: 2vw;
+				text-align: left;
+				padding-left: 2vw;
 			}
 		}
 		&__body {
@@ -337,9 +317,9 @@ ${ this.parse(this.added) }
 			font-size: 2rem;
 			color: $main-elm;
 			text-shadow:
-		            0 4px 5px rgba($blacked, 0.14),
-		            0 1px 10px rgba($blacked, 0.12),
-					0 2px 4px rgba($blacked, 0.3);
+			0 4px 5px rgba($blacked, 0.14),
+			0 1px 10px rgba($blacked, 0.12),
+			0 2px 4px rgba($blacked, 0.3);
 		}
 		&__input {
 			size: 85% 2.5rem;
@@ -419,7 +399,7 @@ ${ this.parse(this.added) }
 				color: $main-elm $second-elm;
 				cursor: pointer;
 				transition: background-color .2s ease-in-out,
-					color .2s ease-in-out
+				color .2s ease-in-out
 			}
 			&:checked + label {
 				color: $second-elm $main-elm

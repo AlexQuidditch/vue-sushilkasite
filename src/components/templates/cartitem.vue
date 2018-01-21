@@ -1,26 +1,23 @@
 <template lang="html">
 	<li class="cart-item">
-		<span class = "cart-item__name">{{ name }}</span>
-		<span class = "cart-item__price">{{ price }}</span>
-		<span class = "cart-item__quantity">
+		<span class="cart-item__name">{{ name }}</span>
+		<span class="cart-item__price">{{ price }}</span>
+		<span class="cart-item__quantity">
 			<button	@click = "$emit('decriment')"
-				class = "cart-item__decriment"
-				type="button" name="button"
-				>
+							class = "cart-item__decriment"
+							type="button">
 				<i class="cart-item__icon fa fa-minus" aria-hidden="true"></i>
 			</button>
 			{{ quantity }}
-			<button	@click = "$emit('incriment')"
-				class = "cart-item__increment"
-				type="button" name="button"
-				>
+			<button	@click="$emit('incriment')"
+							class="cart-item__increment"
+							type="button" name="button">
 				<i class="cart-item__icon fa fa-plus" aria-hidden="true"></i>
 			</button>
 		</span>
-		<span class = "cart-item__summ">{{ summ = quantity * price }}</span>
+		<span class="cart-item__summ">{{ summ = quantity * price }}</span>
 		<button	@click="$emit('remove')"
-			class = "cart-item__remove"
-			>
+						class="cart-item__remove">
 			<i class="cart-item__icon fa fa-times" aria-hidden="true"></i>
 		</button>
 	</li>
@@ -28,30 +25,29 @@
 
 <script>
 
-import TWEEN from 'tween.js';
+	export default {
+		name: "cart-item",
+		props: [ 'id' , 'name' , 'price' , 'quantity' ],
+		data() {
+			return {
+				summ: ''
+			}
+		},
+		created() {
+			this.quantity = 1;
+		},
+		mounted() {
+			this.$emit( 'summUp' , this.summ );
+			Waves.init();
+			Waves.attach('[ripple-dark]', ['waves-dark']);
+		},
+		watch: {
+			summ() {
+				this.$emit('summUp', this.summ );
+			}
+		}
+	};
 
-export default {
-	name: "cart-item",
-	props: [ 'id' , 'name' , 'price' , 'quantity' ],
-	data() {
-		return {
-			summ: ''
-		}
-	},
-	created() {
-		this.quantity = 1;
-	},
-	mounted() {
-		this.$emit('summUp', this.summ );
-		Waves.init();
-		Waves.attach('[ripple-dark]', ['waves-dark']);
-	},
-	watch: {
-		summ() {
-			this.$emit('summUp', this.summ );
-		}
-	}
-}
 </script>
 
 <style lang="scss">

@@ -1,55 +1,52 @@
 <template lang="html">
 
-	<div id="cart" :class="{ 'is-opened' : CartState.isOpened }" class="cart">
+	<div id="cart" :class="{ 'is-opened' : CartState.isOpened }"
+			 class="cart">
 
-        <div class="cart__header">
-            <h4 class="cart__header-title">Корзина</h4>
-            <span class="cart__close">
-                <button	@click = "CartState.isOpened = false"
-					class="cart__close-button"
-					type="button"
-					ripple-dark
-                	>
-                	<i class="fa fa-times" aria-hidden="true"></i>
-                </button>
-            </span>
+		<div class="cart__header">
+			<h4 class="cart__header-title">Корзина</h4>
+			<span class="cart__close">
+				<button	@click = "CartState.isOpened = false"
+								class="cart__close-button"
+								type="button" ripple-dark>
+					<i class="fa fa-times" aria-hidden="true"></i>
+				</button>
+			</span>
 
-        </div>
+		</div>
 
-        <div class="cart__body">
+		<div class="cart__body">
 
 			<div class="cart-columns">
-				<span class = "cart-columns__name">Наименование</span>
-				<span class = "cart-columns__price">Цена:</span>
-				<span class = "cart-columns__quantity">Количество</span>
-				<span class = "cart-columns__summ">Сумма:</span>
+				<span class="cart-columns__name">Наименование</span>
+				<span class="cart-columns__price">Цена:</span>
+				<span class="cart-columns__quantity">Количество</span>
+				<span class="cart-columns__summ">Сумма:</span>
 			</div>
 
 			<ul class="cart-list">
-				<cart-Item v-for = "( cartItem , index ) in added" :key = "cartItem.key"
-					:id = "cartItem.id"
-					:name = "cartItem.name"
-					:price = "cartItem.price"
-					:quantity = "cartItem.quantity"
-					@remove = "added.splice(index, 1), remove()"
-					@incriment = "incriment(cartItem)"
-					@decriment = "decriment(cartItem)"
-					@summUp = "summUp($event)"
-					>
+				<cart-Item v-for="( cartItem , index ) in added" :key="index"
+									:id="cartItem.id"
+									:name="cartItem.name"
+									:price="cartItem.price"
+									:quantity="cartItem.quantity"
+									@remove="added.splice(index, 1), remove()"
+									@incriment="incriment(cartItem)"
+									@decriment="decriment(cartItem)"
+									@summUp="summUp($event)">
 				</cart-item>
 			</ul>
 
-            <div class="cart__order">
-                <button	@click = "$emit('modalOpen')"
-					class="cart__order-button"
-					ripple-light
-					>
+			<div class="cart__order">
+				<button	@click="$emit('modalOpen')"
+								class="cart__order-button"
+								ripple-light>
 					Оформить заказ
 				</button>
-            </div>
-        </div>
+			</div>
+		</div>
 
-        <div class="cart__footer">
+		<div class="cart__footer">
 
 			<transition name = "fade" mode = "out-in" >
 				<span v-if = "CartState.isFilled" key = "filled" class="cart__price">{{ quantities }} товаров на сумму {{ animatedSumms }} р.</span>
@@ -57,42 +54,34 @@
 			</transition>
 
 			<span class="cart__open">
-				<transition name = "fade" >
-					<button	@click = "CartState.isOpened = true"
-						v-show = "CartState.isFilled"
-						:class = "{ 'is-opened' : CartState.isOpened, 'is-filled': !CartState.isFilled }"
-						:title = "titles.openTitle"
-						class= "cart__open-button"
-						type="button"
-						name="button"
-						>
-							<i :class = "{ 'is-opened' : CartState.isOpened }"
-								class="cart__open-icon fa fa-check"
-								aria-hidden="true">
-							</i>
+				<transition name="fade">
+					<button	@click="CartState.isOpened = true"
+									v-show="CartState.isFilled"
+									:class="{ 'is-opened' : CartState.isOpened, 'is-filled': !CartState.isFilled }"
+									:title="titles.openTitle"
+									class= "cart__open-button"
+									type="button">
+						<i :class = "{ 'is-opened' : CartState.isOpened }"
+							 class="cart__open-icon fa fa-check"
+							 aria-hidden="true">
+						</i>
 					</button>
 				</transition>
 			</span>
 
-            <span class="cart__clear">
-				<button	@click = "clearCart()"
-					:title = "titles.closeTitle"
-					class="cart__clear-button"
-					type="button"
-					ripple-dark
-					>
-						<i class="fa fa-trash-o" aria-hidden="true"></i>
-					</button>
-            </span>
+			<span class="cart__clear">
+				<button	@click = "clearCart"
+								:title = "titles.closeTitle"
+								class="cart__clear-button"
+								type="button" ripple-dark>
+					<i class="fa fa-trash-o" aria-hidden="true"></i>
+				</button>
+      </span>
 
-        </div>
+		</div>
 
-    </div>
+	</div>
 
-<!-- <div>
-		<input class="magic-checkbox" type="radio" name="radio" id="22" checked>
-		<label for="22">Checked</label>
-	</div> -->
 </template>
 
 <script>
@@ -183,9 +172,9 @@
 				if (this.quantities > 0) {
 					$data.CartState.isFilled = true
 				}
-			},
+			}
 		}
-	}
+	};
 
 </script>
 

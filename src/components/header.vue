@@ -1,20 +1,20 @@
 <template lang="html">
 	<header id="header" class="header">
 		<div class="header__overlay">
-            <div class="header__title-container">
-                <h1 class="header__title">{{ Titles.main }}</h1>
-                <h2 class="header__subtitle">{{ Titles.sub }}</h2>
+			<div class="header__title-container">
+				<h1 class="header__title">{{ Titles.main }}</h1>
+				<h2 class="header__subtitle">{{ Titles.sub }}</h2>
 				<h6 class="header__sub-text">{{ Titles.little }}</h6>
-            </div>
-        </div>
+			</div>
+		</div>
 	</header>
 </template>
 
 <script>
 
 	export default {
-  		name: "header",
-      	data() {
+		name: "header",
+		data() {
 			return {
 				Titles: {
 					main: 'Вкуснейшие роллы и суши\nс доставкой на дом!',
@@ -22,8 +22,8 @@
 					little: 'В праздники можем немного припоздниться :)'
 				}
 			}
-      	}
-	}
+		}
+	};
 
 </script>
 

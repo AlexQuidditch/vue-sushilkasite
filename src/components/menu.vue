@@ -3,22 +3,23 @@
 
 		<nav role="navigation">
 			<a @click.prevent = "menuClick()"
-				:class = " { 'is-active' : isActive } "
-				href="#"
-				class="menu-button"
-				>Меню</a>
+				 :class = " { 'is-active' : isActive } "
+				 href="#"
+				 class="menu-button">
+				Меню
+			</a>
 
 			<ul :class = " { 'is-opened' : isActive } "
-				id="sidebar__list"
-				class="sidebar__list"
-				style="border-radius: 100%"
-				>
+					id="sidebar__list"
+					class="sidebar__list"
+					style="border-radius: 100%">
 				<li class="sidebar__item _clear"></li>
 				<li v-for = "menuItem in Menu" :key = "menuItem.key"
-					@click = "scrollTo(menuItem.anchor)"
-					class="sidebar__item"
-					ripple-dark
-					>{{ menuItem.name }}</li>
+						@click = "scrollTo(menuItem.anchor)"
+						class="sidebar__item"
+						ripple-dark>
+					{{ menuItem.name }}
+				</li>
 			</ul>
 
 		</nav>
@@ -36,6 +37,10 @@
 			return {
 				isActive: false,
 				Menu: [
+					{
+						anchor: 'pizza',
+						name: 'Пицца'
+					},
 					{
 						anchor: 'rolls',
 						name: 'Роллы'
@@ -70,7 +75,15 @@
 					},
 					{
 						anchor: 'rice',
-						name: 'Лапша и рис'
+						name: 'Лапша/рис/крылья'
+					},
+					{
+						anchor: 'soups',
+						name: 'Супы'
+					},
+					{
+						anchor: 'wok',
+						name: 'Лапша WOK'
 					},
 					{
 						anchor: 'sets',
@@ -125,7 +138,7 @@
 						queue: false
 					});
 					Velocity(sidebar, {
-						height: '496px',
+						height: '618px',
 						'border-radius': '0%'
 					}, {
 						duration: 400,
@@ -181,11 +194,11 @@
 		width: 200px;
 		left: 1vw;
 		@include MQ(Pp) {
-	        z-index: 100;
-	        top: auto;
-	        bottom: 5vh;
-	        left: 50%;
-	        transform: translateX(-50%);
+			z-index: 100;
+			top: auto;
+			bottom: 5vh;
+			left: 50%;
+			transform: translateX(-50%);
 		}
 		&__list {
 			display: inline-block;
@@ -221,4 +234,5 @@
 			}
 		}
 	}
+
 </style>
