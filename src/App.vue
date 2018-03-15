@@ -1,18 +1,18 @@
 <template lang="html">
 	<div id="wrapper" class="wrapper">
-		<cart :added = "added"
-					:operationsCounter = "operationsCounter"
-					@changeCounter = "changeCounter()"
-					@clearCart = "clearCart()"
-					@modalOpen = "modalOpen()">
+		<cart :added="added"
+					:operationsCounter="operationsCounter"
+					@changeCounter="changeCounter"
+					@clearCart="clearCart"
+					@modalOpen="modalOpen">
 		</cart>
 		<s-menu></s-menu>
 		<s-header></s-header>
-		<catalogue @addToCart = "pushToCart($event)"></catalogue>
+		<catalogue @addToCart="pushToCart"></catalogue>
 		<s-footer></s-footer>
-		<modal :added = "added"
-					 :class = "{ 'is-opened' : modalState }"
-					 @clearCart = "clearCart()" @modalClose = "modalClose()">
+		<modal :added="added"
+					 :class="{ 'is-opened' : modalState }"
+					 @clearCart="clearCart" @modalClose="modalClose">
 		</modal>
 	</div>
 </template>

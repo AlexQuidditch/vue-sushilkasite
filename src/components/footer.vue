@@ -30,7 +30,7 @@
 					<span class="requisites__name">{{ official.name }}</span>
 					<ul class="requisites__list">
 						<li v-for="contentItem in official.content"
-							class="requisites__item"
+								class="requisites__item"
 							>{{ contentItem }}</li>
 					</ul>
 				</div>
@@ -39,7 +39,7 @@
 					<span class="requisites__name">{{ address.name }}</span>
 					<ul class="requisites__list">
 						<li v-for="contentItem in address.content"
-							class="requisites__item"
+								class="requisites__item"
 							>{{ contentItem }}</li>
 					</ul>
 				</div>
@@ -48,7 +48,7 @@
 					<span class="requisites__name">{{ phones.name }}</span>
 					<ul class="requisites__list">
 						<li v-for="contentItem in phones.content"
-							class="requisites__item"
+								class="requisites__item"
 							>{{ contentItem }}</li>
 					</ul>
 				</div>
@@ -71,8 +71,8 @@
 		</div>
 
 		<div class="webeor">
-			<a href="//AlexQuidditch.github.io" target="_blank" class="webeor__link">
-				<img src="../../static/assets/svg/logo.svg" alt="WebeOR" class="webeor__logo" />
+			<a href="//webeor.ru" target="_blank" class="webeor__link">
+				<img src="/static/assets/svg/logo.svg" alt="WebeOR" class="webeor__logo" />
 			</a>
 		</div>
 
@@ -80,63 +80,56 @@
 </template>
 
 <script>
+
 	export default {
 		name: "footer",
 		data() {
 			return {
 				social: {
-					name: 'Мы в соцсетях:',
+					name: "Мы в соцсетях:",
 					content: [
 						{
-							icon: 'vk',
-							link: '//vk.com/sushiachinsk'
+							icon: "vk",
+							link: "//vk.com/sushiachinsk"
 						}
 					]
 				},
 				feedback: {
-					link: 'mailto:Vaz211483@mail.ru',
-					text: 'Отправить отзыв'
+					link: "mailto:Vaz211483@mail.ru",
+					text: "Отправить отзыв"
 				},
 				official: {
 					name: 'ООО "Дуэт"',
-					content: [
-						'ИНН 2443045445',
-						'ОГРН 1152443000456'
-					]
+					content: ["ИНН 2443045445", "ОГРН 1152443000456"]
 				},
 				address: {
-					name: 'Адрес:',
-					content: [
-						'г. Ачинск, мкр-он 4, д.29, пом.57'
-					]
+					name: "Адрес:",
+					content: ["г. Ачинск, мкр-он 4, д.29, пом.57"]
 				},
 				phones: {
-					name: 'Телефоны:',
-					content: [
-						'+7 (953) 849-39-30',
-						'+7 (962) 071-52-22',
-						'93-93-0'
-					]
+					name: "Телефоны:",
+					content: ["+7 (953) 849-39-30", "+7 (962) 071-52-22", "93-93-0"]
 				},
 				mail: {
-					name: 'Почта:',
+					name: "Почта:",
 					content: [
 						{
-							text: 'Vaz211483@mail.ru',
-							title: 'Напишите нам :)'
+							text: "Vaz211483@mail.ru",
+							title: "Напишите нам :)"
 						}
 					]
 				}
 			}
 		}
-	}
+	};
+
 </script>
 
 <style lang="scss">
 
-	@import '../scss/partials/_layout';
-	@import '../scss/partials/_mixins';
-	@import '../scss/partials/_variables';
+	@import "../scss/partials/_layout";
+	@import "../scss/partials/_mixins";
+	@import "../scss/partials/_variables";
 
 	.footer {
 		max-width: 1180px;
@@ -161,27 +154,27 @@
 		align-items: center;
 		flex: 1 1 49%;
 		@include MQ(Pp) {
-	        flex: 1 1 100%;
-    	    flex-flow: column wrap;
+			flex: 1 1 100%;
+			flex-flow: column wrap;
 		}
 		@include MQ(Pl) {
-	        flex: 1 1 100%;
-    	    flex-flow: column wrap;
+			flex: 1 1 100%;
+			flex-flow: column wrap;
 		}
 		&__text {
 			display: inline-block;
 			vertical-align: middle;
 			@include MQ(Pp) {
-	            display: block;
-	            text-align: center;
-	            font-size: 1.5rem;
-	            line-height: 2;
+				display: block;
+				text-align: center;
+				font-size: 1.5rem;
+				line-height: 2;
 			}
 			@include MQ(Pl) {
-	            display: block;
-	            text-align: center;
-	            font-size: 1.5rem;
-	            line-height: 2;
+				display: block;
+				text-align: center;
+				font-size: 1.5rem;
+				line-height: 2;
 			}
 		}
 		&__list {
@@ -190,10 +183,10 @@
 			text-align: center;
 			vertical-align: middle;
 			@include MQ(Pp) {
-            	width: 100%;
+				width: 100%;
 			}
 			@include MQ(Pl) {
-            	width: 100%;
+				width: 100%;
 			}
 		}
 		&__item {
@@ -232,11 +225,11 @@
 		padding: 10px;
 		@include MQ(Pp) {
 			flex: 1 1 100%;
-	        padding: 1.5rem 0;
+			padding: 1.5rem 0;
 		}
 		@include MQ(Pl) {
 			flex: 1 1 100%;
-	        padding: 1.5rem 0;
+			padding: 1.5rem 0;
 		}
 		&__button {
 			display: inline-block;
@@ -252,11 +245,11 @@
 			}
 			@include MQ(Pp) {
 				width: 100%;
-	            font-size: 1.3rem;
+				font-size: 1.3rem;
 			}
 			@include MQ(Pl) {
 				width: 100%;
-	            font-size: 1.3rem;
+				font-size: 1.3rem;
 			}
 			@include MQ(Tp) {
 				width: 100%;
@@ -279,11 +272,11 @@
 			text-align: center;
 			@include MQ(Pp) {
 				flex: 1 1 100%;
-	            margin-bottom: 1rem;
+				margin-bottom: 1rem;
 			}
 			@include MQ(Pl) {
 				flex: 1 1 100%;
-	            margin-bottom: 1rem;
+				margin-bottom: 1rem;
 			}
 		}
 		&__name {
@@ -306,4 +299,5 @@
 			height: 35px;
 		}
 	}
+
 </style>
